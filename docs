@@ -1,0 +1,17 @@
+⛩️ WACCA: The Development Journey
+Phase 1: The Cinematic Core (3D & Scroll)
+Concept: 都市を「観測」し、プロダクトに「同期」する体験の構築。
+
+Tech: Three.jsの命令的APIを用い、Z軸へのフライイン演出を実装。60fpsで連動するHUD（Head-Up Display）を構築し、エディトリアルなタイポグラフィを同期。
+
+Phase 2: The Infrastructure Pivot (Shopify to Stripe)
+Decision: 持続可能なブランド運営のため、Shopifyの固定費を排除。
+
+Tech: Shopify Hydrogenのサーバー環境（Oxygen/Cloudflare Workers）に合わせ、Node.js SDKを捨てて Native Fetch API によるStripe直接通信を自作。
+
+Phase 3: The Awakening Logic (O2O)
+Concept: 「買った後」に体験が終わらない仕組み。
+
+Features: - Digital Stamp: /journal/activate による、物理的なプロダクト（QR）からネットワークへの「ノード参加」の儀式。
+
+Delivery Sync: 配送完了を契機に、サイト全体がエメラルド〜ゴールドへ変容する「時差式覚醒」を実装。
