@@ -1,0 +1,47 @@
+# WACCA — Your City. Your Culture. 🌐
+
+> **A Headless E-Commerce Experience from Tokyo.** > Built with Shopify Hydrogen, Three.js, and Stripe.
+
+WACCAは、単なる「オンラインショップ」ではありません。都市の記憶とプロダクトを同期させる、没入型のデジタル・プラットフォームです。Shopifyの堅牢なバックエンドを維持しつつ、フロントエンドではThree.jsによるGPU演算を用いた3D都市フライスルーと、サイバーパンクなUIを統合しています。
+
+---
+
+## ⚡ Key Features
+
+### 🌆 Immersive 3D City Fly-through
+- **6-City Sequence:** Bangkok → Ho Chi Minh → Shanghai → Taipei → Seoul → Tokyo.
+- **Scroll-Linked Camera:** Three.jsを用いたスクロール連動型Z軸フライイン演出。
+- **Real-time HUD:** 都市の座標と名称を60fpsで同期表示するヘッドアップディスプレイ。
+
+### ⚡ System Synchronization (Awakening)
+- **GPU Particle Burst:** ユーザーの現在地（20）をネットワークに接続した瞬間、Shaderによるパーティクル爆発が発生。
+- **Environment Sync:** サイト全体のテーマカラーがシアン（またはゴールド）へ変容し、プロダクトに命が吹き込まれます。
+
+### 💳 Zero-Fixed-Cost Commerce
+- **Stripe Checkout Integration:** Shopify Storefront APIをバイパスし、Stripe Checkoutへ直結。
+- **Headless Architecture:** Oxygen (Cloudflare Workers) 環境に最適化された超軽量・高速なレスポンス。
+
+### 🔗 Online-to-Offline (O2O) Logic
+- **Digital Stamp:** `/journal/activate` を通じた、物理プロダクトとデジタル体験の紐付け。
+- **Delivery Sync:** 配送完了後に特別な視覚演出を提供する「時差式覚醒モード」。
+
+---
+
+## 🛠 Technical Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | Shopify Hydrogen (Remix) |
+| **Runtime** | MiniOxygen (Cloudflare Workers) |
+| **3D Engine** | Three.js |
+| **Styling** | Tailwind CSS |
+| **Payment** | Stripe (Fetch API Implementation) |
+| **State Management** | React Context + LocalStorage Persistence |
+
+---
+
+## 🚀 Getting Started
+
+1. **Install dependencies:**
+   ```bash
+   npm install
