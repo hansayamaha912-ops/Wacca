@@ -1,0 +1,1345 @@
+
+> wacca-web-experience@0.1.0 dev
+> shopify hydrogen dev --port 3456
+
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+Environment variables injected into MiniOxygen:
+
+PUBLIC_STORE_DOMAIN             from local .env
+PUBLIC_STOREFRONT_API_TOKEN     from local .env
+PUBLIC_STOREFRONT_API_VERSION   from local .env
+SESSION_SECRET                  from local .env
+STRIPE_SECRET_KEY               from local .env
+STRIPE_PUBLIC_KEY               from local .env
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3456[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+
+
+╭─ success ────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  View Hydrogen app: http://localhost:3456/                                   │
+│                                                                              │
+│  View GraphiQL API browser:                                                  │
+│  http://localhost:3456/graphiql                                              │
+│                                                                              │
+│  View server network requests:                                               │
+│  http://localhost:3456/subrequest-profiler                                   │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ info ───────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  There are 21 new @shopify/hydrogen versions available.                      │
+│                                                                              │
+│  Current: 2024.10.2 | Latest: 2026.4.1                                       │
+│                                                                              │
+│  The next 5 version(s) include                                               │
+│    • 2026.4.1 - Cart compatibility fixes and @shopify/remix-oxygen           │
+│      deprecation                                                             │
+│    • 2026.4.0 - Update Storefront API to 2026-04 and enable backend consent  │
+│      mode                                                                    │
+│    • 2026.1.4 - Add Storefront MCP proxy for AI agent integration            │
+│    • 2026.1.3 - CLI fixes and dependency updates                             │
+│    • 2026.1.2 - CLI and auth improvements                                    │
+│    • ...more                                                                 │
+│                                                                              │
+│  Next steps                                                                  │
+│    • Run `npx shopify hydrogen upgrade` or `npx shopify hydrogen upgrade     │
+│      --version 2026.4.1`                                                     │
+│    • Read release notes at https://hydrogen.shopify.dev/releases             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ warning ────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  In Hydrogen's `createStorefrontClient`:                                     │
+│                                                                              │
+│  Storefront API client created without a cache instance. This may slow down  │
+│   your sub-requests.                                                         │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+   GET  200  render  /  2022ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fexample-product&p=%2Fproducts%2Fsnowboard&p=%2Fterms-of-service&version=0.2321931520768128  11ms
+   GET  200  render  /  465ms
+   GET  200  render  /  229ms
+   GET  200  render  /  117ms
+   GET  200  render  /  176ms
+[2m8:11:12 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  78ms
+   GET  200  render  /  303ms
+   GET  200  render  /  127ms
+   GET  200  render  /  97ms
+[2m8:18:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  22ms
+   GET  200  render  /  194ms
+   GET  200  render  /  71ms
+   GET  200  render  /  38ms
+   GET  200  render  /  37ms
+   GET  200  render  /  84ms
+[2m8:25:11 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  23ms
+   GET  200  render  /  396ms
+   GET  200  render  /  730ms
+   GET  200  render  /  1039ms
+   GET  200  render  /  249ms
+   GET  200  render  /  164ms
+[2m10:26:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  16ms
+   GET  200  render  /  71ms
+[2m10:37:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  48ms
+   GET  200  render  /  380ms
+[2m10:46:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  14ms
+[2m10:46:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  22ms
+   GET  200  render  /  296ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  111ms
+[2m10:57:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  57ms
+[2m10:58:21 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /products/snowboard.data  911ms
+   GET  200  render  /__manifest?p=%2Fapi%2Fcheckout&version=0.2321931520768128  2ms
+   GET  200  render  /products/snowboard  119ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fapi%2Fcheckout&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fsnowboard&p=%2Fterms-of-service&version=0.2321931520768128  8ms
+   GET  200  render  /_root.data  7ms
+   GET  200  render  /__manifest?p=%2Fproducts%2Fexample-product&version=0.2321931520768128  3ms
+   GET  200  render  /_root.data  13ms
+   GET  200  render  /_root.data  3ms
+   GET  200  render  /products/snowboard.data  1ms
+   GET  200  render  /_root.data  6ms
+   GET  200  render  /about.data  4ms
+   GET  200  render  /account/login.data  2ms
+   GET  200  render  /__manifest?p=%2Faccount%2Fregister&version=0.2321931520768128  3ms
+   GET  200  render  /about.data  1ms
+   GET  200  render  /_root.data  6ms
+   GET  200  render  /_root.data  2ms
+   GET  200  render  /_root.data  6ms
+   GET  200  render  /  44ms
+   GET  200  render  /_root.data  4ms
+   GET  200  render  /  21ms
+   GET  404  render  /products/example-product.data  32ms
+   GET  200  render  /_root.data  6ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  112ms
+[2m11:23:39 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+   GET  200  render  /  183ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  74ms
+[2m11:23:44 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js[22m
+[2m11:23:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js[22m
+[2m11:24:43 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  66ms
+   GET  200  render  /about.data  14ms
+   GET  200  render  /account/login.data  21ms
+   GET  200  render  /about.data  5ms
+   GET  200  render  /about  354ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fsnowboard&p=%2Fterms-of-service&version=0.2321931520768128  6ms
+   GET  200  render  /_root.data  34ms
+[2m11:25:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  4ms
+   GET  200  render  /  300ms
+   GET  200  render  /  55ms
+   GET  200  render  /about.data  3ms
+   GET  200  render  /_root.data  38ms
+   GET  200  render  /about.data  10ms
+   GET  200  render  /_root.data  9ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  187ms
+   GET  200  render  /  180ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  50ms
+[2m11:41:05 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js, /app/components/3d/HeroScene.jsx[22m
+[2m11:41:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  61ms
+   GET  200  render  /  55ms
+   GET  200  render  /  26ms
+   GET  200  render  /about.data  1ms
+   GET  200  render  /_root.data  20ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  53ms
+   GET  200  render  /  23ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  28ms
+[2m11:46:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  19ms
+   GET  200  render  /  62ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  27ms
+   GET  200  render  /  56ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  42ms
+   GET  200  render  /  42ms
+   GET  200  render  /  23ms
+   GET  200  render  /  30ms
+[2m11:53:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  16ms
+   GET  200  render  /  64ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  44ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  41ms
+[2m11:59:13 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  36ms
+   GET  200  render  /  60ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  87ms
+   GET  200  render  /  64ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  29ms
+[2m12:10:02 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  40ms
+   GET  200  render  /  112ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  87ms
+   GET  200  render  /  377ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  883ms
+   GET  200  render  /  286ms
+   GET  200  render  /  130ms
+   GET  200  render  /  218ms
+   GET  200  render  /  45ms
+   GET  200  render  /  56ms
+[2m2:58:01 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js, /app/components/3d/HeroScene.jsx[22m
+   GET  200  render  /_root.data  149ms
+[2m2:58:10 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js, /app/components/3d/HeroScene.jsx[22m
+   GET  200  render  /_root.data  28ms
+[2m2:58:38 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m2:58:38 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"[39m
+  Plugin: [35mvite:esbuild[39m
+  File: [36m/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx[39m:218:10
+[33m  
+  [33mExpected ")" but found ";"[33m
+  216|                  product.add(model);
+  217|              });
+  218|          });         }
+     |            ^
+  219|                  }
+  220|              });
+  [39m
+      at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:519:28)
+      at Socket.emit (node:domain:489:12)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[vite] Internal Server Error
+Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"
+    at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+    at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+    at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+    at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+    at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[2m2:58:52 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  74ms
+[2m2:59:12 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  38ms
+[2m2:59:28 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  220ms
+[2m3:00:28 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"[39m
+  Plugin: [35mvite:esbuild[39m
+  File: [36m/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx[39m:218:10
+[33m  
+  [33mExpected ")" but found ";"[33m
+  216|                  product.add(model);
+  217|              });
+  218|          });         }
+     |            ^
+  219|                  }
+  220|              });
+  [39m
+      at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:519:28)
+      at Socket.emit (node:domain:489:12)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[vite] Internal Server Error
+Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"
+    at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+    at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+    at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+    at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+    at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+   GET  200  render  /  47ms
+[2m3:00:32 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"[39m
+  Plugin: [35mvite:esbuild[39m
+  File: [36m/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx[39m:218:10
+[33m  
+  [33mExpected ")" but found ";"[33m
+  216|                  product.add(model);
+  217|              });
+  218|          });         }
+     |            ^
+  219|                  }
+  220|              });
+  [39m
+      at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:519:28)
+      at Socket.emit (node:domain:489:12)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[vite] Internal Server Error
+Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"
+    at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+    at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+    at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+    at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+    at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+   GET  200  render  /about.data  3ms
+   GET  200  render  /_root.data  2ms
+   GET  200  render  /_root.data  1ms
+   GET  200  render  /  49ms
+[2m3:00:54 PM[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"[39m
+  Plugin: [35mvite:esbuild[39m
+  File: [36m/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx[39m:218:10
+[33m  
+  [33mExpected ")" but found ";"[33m
+  216|                  product.add(model);
+  217|              });
+  218|          });         }
+     |            ^
+  219|                  }
+  220|              });
+  [39m
+      at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:519:28)
+      at Socket.emit (node:domain:489:12)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[vite] Internal Server Error
+Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/3d/HeroScene.jsx:218:10: ERROR: Expected ")" but found ";"
+    at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+    at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+    at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+    at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+    at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  107ms
+[2m3:04:41 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  76ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  41ms
+   GET  200  render  /about.data  31ms
+   GET  200  render  /_root.data  83ms
+[2m3:11:52 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js, /app/components/3d/HeroScene.jsx[22m
+   GET  200  render  /_root.data  96ms
+[2m3:12:22 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  12ms
+   GET  200  render  /  185ms
+   GET  200  render  /  608ms
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 63690,
+      remoteAddress: '127.0.0.1',
+      remotePort: 53758,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 1474,
+      bytesRead: 12243
+    }
+  }
+}
+   GET  200  render  /  902ms
+   GET  200  render  /  2080ms
+   GET  200  render  /  91ms
+[2m6:42:41 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  191ms
+[2m6:43:55 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  107ms
+   GET  200  render  /  215ms
+   GET  200  render  /  345ms
+[2m9:53:19 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  102ms
+[2m9:53:24 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  71ms
+[2m9:53:31 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  44ms
+   GET  200  render  /  170ms
+   GET  200  render  /  27ms
+[2m9:57:45 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  73ms
+[2m9:57:59 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  87ms
+   GET  200  render  /  256ms
+[2m10:09:20 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  87ms
+[2m10:09:26 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  16ms
+[2m10:09:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  101ms
+   GET  200  render  /  164ms
+   GET  200  render  /  399ms
+[2m11:12:03 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/WhatsUr20Input.jsx, /app/styles/app.css?direct[22m
+[2m11:12:06 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js, /app/components/3d/HeroScene.jsx[22m
+[2m11:12:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m11:12:31 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/BackgroundCityCanvas.jsx, /app/styles/app.css?direct[22m
+[2m11:12:37 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m11:12:40 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m11:12:42 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m11:12:43 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/entry.client.jsx[22m
+[2m11:12:45 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m11:12:45 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/components/cart/AddToCartButton.jsx[22m
+[2m11:12:47 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/ClientOnlyBackgroundCity.jsx, /app/styles/app.css?direct[22m
+[2m11:12:47 PM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m11:12:48 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m11:12:48 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m11:12:48 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mbuild/server/server-bundle-analyzer.html[22m
+[2m11:12:49 PM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m11:12:58 PM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  SyntaxError: Unexpected end of JSON input                                   │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+[2m11:13:01 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m11:13:04 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  SyntaxError: Unexpected end of JSON input                                   │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+[2m11:13:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/cart/CheckoutButton.jsx, /app/styles/app.css?direct[22m
+[2m11:13:08 PM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /Users/hansamin/Desktop/Wacca/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m11:13:09 PM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /Users/hansamin/Desktop/Wacca/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m11:15:29 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct, ./server.js, /app/components/3d/HeroScene.jsx[22m
+During SSR HMR: SyntaxError: Unexpected end of JSON input
+    at ViteRuntime.cachedModule (Users/hansamin/Desktop/Wacca/node_modules/@shopify/mini-oxygen/dist/vite/worker-entry.js:965:91)
+    at ViteRuntime.executeUrl (Users/hansamin/Desktop/Wacca/node_modules/@shopify/mini-oxygen/dist/vite/worker-entry.js:876:27)
+    at handleHMRPayload (Users/hansamin/Desktop/Wacca/node_modules/@shopify/mini-oxygen/dist/vite/worker-entry.js:597:11)
+[2m11:15:45 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m11:15:47 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m11:15:48 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m11:16:05 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m11:16:05 PM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m11:16:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m11:16:07 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m11:16:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m11:16:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/account.login.jsx, /app/styles/app.css?direct[22m
+[2m11:16:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m11:16:10 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m11:16:10 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct[22m
+[2m11:16:15 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m11:16:15 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m11:16:15 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m11:16:15 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/account.login.jsx, /app/styles/app.css?direct[22m
+[2m11:16:15 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct[22m
+[2m11:16:17 PM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /Users/hansamin/Desktop/Wacca/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2m11:16:17 PM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 59710,
+      remoteAddress: '127.0.0.1',
+      remotePort: 53758,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 791,
+      bytesRead: 0
+    }
+  }
+}
+[2m11:16:20 PM[22m [36m[1m[vite][22m[39m server restarted.
+[2m12:01:11 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m12:01:13 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m12:02:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2042:62
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard  219ms
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2042:62
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard  54ms
+[2m12:02:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /__manifest?p=%2Fproducts%2Fsnowboard&version=0.6254711502228361  104ms
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3022:72
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard.data  5ms
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2042:62
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard  343ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  375ms
+[2m12:21:57 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3022:72
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard.data  99ms
+[2m12:22:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3022:72
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard.data  51ms
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2042:62
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard  177ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  43ms
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2042:62
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard  110ms
+[2m12:25:21 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m12:25:21 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/components/cart/AddToCartButton.jsx[22m
+[2m12:25:21 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/ClientOnlyBackgroundCity.jsx, /app/styles/app.css?direct[22m
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3022:72
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard.data  68ms
+   GET  500  render  /products/snowboard  151ms
+[2m12:27:25 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m12:27:25 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/ui/GlobalNavigation.jsx:5:9: ERROR: The symbol "useSync" has already been declared[39m
+  Plugin: [35mvite:esbuild[39m
+  File: [36m/Users/hansamin/Desktop/Wacca/app/components/ui/GlobalNavigation.jsx[39m:5:9
+[33m  
+  [33mThe symbol "useSync" has already been declared[33m
+  3  |  import { useSync } from '~/lib/SyncContext';
+  4  |  import { ClientOnly } from '~/components/ui/ClientOnly';
+  5  |  import { useSync } from '~/lib/SyncContext';
+     |           ^
+  6  |  
+  7  |  export function GlobalNavigation() {
+  [39m
+      at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+      at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:519:28)
+      at Socket.emit (node:domain:489:12)
+      at addChunk (node:internal/streams/readable:561:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+      at Socket.Readable.push (node:internal/streams/readable:392:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[vite] Internal Server Error
+Transform failed with 1 error:
+/Users/hansamin/Desktop/Wacca/app/components/ui/GlobalNavigation.jsx:5:9: ERROR: The symbol "useSync" has already been declared
+    at failureErrorWithLog (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:1472:15)
+    at /Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:755:50
+    at responseCallbacks.<computed> (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:622:9)
+    at handleIncomingPacket (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:677:12)
+    at Socket.readFromStdout (/Users/hansamin/Desktop/Wacca/node_modules/vite/node_modules/esbuild/lib/main.js:600:7)
+    at Socket.emit (node:events:519:28)
+    at Socket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Socket.Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[2m12:27:33 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3022:72
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard.data  57ms
+[2m12:27:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3022:72
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard.data  33ms
+[2m12:27:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3022:72
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard.data  65ms
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2042:62
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard  348ms
+TypeError: Cannot read properties of undefined (reading 'find')
+    at loader (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:26:36)
+    at callRouteLoader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3291:22)
+    at commonRoute.loader (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:3391:36)
+    at actualHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2091:14)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2099:91
+    at runHandler (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2110:5)
+    at callLoaderOrAction (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2158:22)
+    at Object.resolve (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2056:27)
+    at /Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/@remix-run_server-runtime.js:2042:62
+    at Array.map (<anonymous>)
+   GET  500  render  /products/snowboard  54ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  49ms
+[2m12:50:28 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct, /app/routes/products.$handle.jsx[22m
+   GET  404  render  /products/snowboard.data  154ms
+   GET  404  render  /products/snowboard  184ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  87ms
+   GET  404  render  /products/snowboard  40ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  70ms
+   GET  404  render  /products/snowboard  99ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  42ms
+   GET  200  render  /  103ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fexample-product&p=%2Fproducts%2Fsnowboard&p=%2Fterms-of-service&version=0.6254711502228361  4ms
+   GET  200  render  /_root.data  29ms
+   GET  200  render  /about.data  13ms
+   GET  200  render  /account/login.data  1ms
+   GET  200  render  /__manifest?p=%2Faccount%2Fregister&version=0.6254711502228361  1ms
+   GET  404  render  /products/snowboard.data  2ms
+   GET  200  render  /account/login.data  2ms
+   GET  200  render  /_root.data  9ms
+   GET  200  render  /products.data  43ms
+   GET  200  render  /_root.data  2ms
+[2m1:06:57 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  532ms
+   GET  404  render  /products/snowboard.data  629ms
+[2m1:07:08 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  94ms
+   GET  404  render  /products/snowboard.data  5ms
+[2m1:07:13 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m1:07:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  246ms
+ErrorResponseImpl {
+  status: 404,
+  statusText: Not Found,
+  internal: false,
+  data: Product not found
+}
+   GET  404  render  /products/snowboard  190ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  59ms
+ErrorResponseImpl {
+  status: 404,
+  statusText: Not Found,
+  internal: false,
+  data: Product not found
+}
+   GET  404  render  /products/snowboard  59ms
+ErrorResponseImpl {
+  status: 404,
+  statusText: Not Found,
+  internal: false,
+  data: Product not found
+}
+   GET  404  render  /products/snowboard  47ms
+ErrorResponseImpl {
+  status: 404,
+  statusText: Not Found,
+  internal: false,
+  data: Product not found
+}
+   GET  404  render  /products/snowboard  47ms
+   GET  200  render  /_root.data  1ms
+   GET  404  render  /products/snowboard.data  1ms
+   GET  200  render  /__manifest?p=%2Fpolicies&version=0.6254711502228361  6ms
+   GET  200  render  /policies.data  4ms
+   GET  200  render  /_root.data  2ms
+[2m1:13:18 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  463ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.6254711502228361  5ms
+[2m1:14:46 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products._index.jsx, /app/styles/app.css?direct, /app/routes/products.$handle.jsx, /app/components/3d/HeroScene.jsx[22m
+   GET  200  render  /_root.data  98ms
+   GET  200  render  /_root.data  110ms
+[2m1:16:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m1:17:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m1:17:38 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  489ms
+   GET  200  render  /  255ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.6254711502228361  3ms
+[2m1:18:51 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  195ms
+[2m1:19:05 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m1:19:08 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m1:19:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  115ms
+   GET  200  render  /about.data  15ms
+[2m1:25:21 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  603ms
+[2m2:41:09 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  203ms
+   GET  200  render  /_root.data  67ms
+   GET  200  render  /  228ms
+[2m2:53:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  307ms
+[2m3:01:07 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  776ms
+   GET  200  render  /  798ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  238ms
+   GET  200  render  /_root.data  13ms
+[2m8:26:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/WhatsUr20Input.jsx, /app/styles/app.css?direct[22m
+[2m8:26:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products._index.jsx, /app/styles/app.css?direct, /app/routes/products.$handle.jsx, /app/components/3d/HeroScene.jsx[22m
+[2m8:26:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m8:26:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/BackgroundCityCanvas.jsx, /app/styles/app.css?direct[22m
+[2m8:26:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m8:26:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:26:31 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m8:26:39 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/entry.client.jsx[22m
+[2m8:26:39 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/components/cart/AddToCartButton.jsx[22m
+[2m8:26:39 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/ClientOnlyBackgroundCity.jsx, /app/styles/app.css?direct[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m8:26:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/cart/CheckoutButton.jsx, /app/styles/app.css?direct[22m
+[2m8:26:41 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m8:26:46 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:26:46 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m8:26:46 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products._index.jsx, /app/styles/app.css?direct[22m
+[2m8:26:46 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/policies.jsx, /app/styles/app.css?direct[22m
+[2m8:26:46 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/account.login.jsx, /app/styles/app.css?direct[22m
+[2m8:26:46 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/policies.jsx, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products._index.jsx, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct[22m
+[2m8:26:47 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/account.login.jsx, /app/styles/app.css?direct[22m
+[2m8:26:48 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m8:26:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:26:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:26:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:26:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:26:53 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/BackgroundCityCanvas.jsx, /app/styles/app.css?direct[22m
+[2m8:26:53 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m8:26:53 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m8:26:56 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:26:56 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/BackgroundCityCanvas.jsx, /app/styles/app.css?direct[22m
+[2m8:26:56 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 53466,
+      remoteAddress: '127.0.0.1',
+      remotePort: 60214,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 807,
+      bytesRead: 0
+    }
+  }
+}
+[2m8:26:59 AM[22m [36m[1m[vite][22m[39m server restarted.
+[2m8:28:10 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:28:11 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:28:12 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+   GET  200  render  /  8302ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.24217571715764108  2ms
+  HEAD  200  render  /  295ms
+   GET  200  render  /  175ms
+   GET  200  render  /.well-known/appspecific/com.chrome.devtools.json  52ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.24217571715764108  5ms
+   GET  200  render  /  223ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.24217571715764108  4ms
+[2m8:40:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:40:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct, /app/components/3d/HeroScene.jsx[22m
+[2m8:40:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m8:40:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m8:41:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:01 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m8:41:12 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/entry.client.jsx[22m
+[2m8:41:12 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:12 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m8:41:13 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m8:41:13 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:41:14 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m8:41:14 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m8:41:14 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m8:41:15 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:41:15 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m8:41:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:23 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:23 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m8:41:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:25 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m8:41:27 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m8:41:27 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:41:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:41:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m8:41:31 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m8:41:33 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:34 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:34 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:41:34 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m8:41:38 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:38 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m8:41:40 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  Error: Network connection lost.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  Error: Network connection lost.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  Error: Network connection lost.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  Error: Network connection lost.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  Error: Network connection lost.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭─ error ──────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  MiniOxygen encountered an error while running your app's entry point:       │
+│                                                                              │
+│  Error: Network connection lost.                                             │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+[2m8:41:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:41:55 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m8:42:03 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m8:42:03 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m8:42:04 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m8:42:04 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m8:42:07 AM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/app/lib/SyncContext.jsx[22m Could not Fast Refresh. Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m8:42:07 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct, /app/root.jsx, /app/routes/_index.jsx, /app/components/ui/CommunityBar.jsx, /app/components/ui/GlobalFooter.jsx, /app/components/ui/GlobalNavigation.jsx, /app/components/3d/HeroScene.jsx[22m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 59287,
+      remoteAddress: '127.0.0.1',
+      remotePort: 53610,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 699,
+      bytesRead: 0
+    }
+  }
+}
+[2m8:42:15 AM[22m [36m[1m[vite][22m[39m server restarted.
+[2m8:43:16 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:43:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m8:43:18 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+   GET  200  render  /  6227ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.6167737970582603  4ms
+[2m8:45:32 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  57ms
+   GET  200  render  /products/angr-kun-main.data  355ms
+[2m8:49:03 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/components/cart/AddToCartButton.jsx[22m
+[2m8:49:03 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/ClientOnlyBackgroundCity.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /products/angr-kun-main.data  81ms
+TypeError: Cannot read properties of undefined (reading 'minVariantPrice')
+    at ProductPage (/Users/hansamin/Desktop/Wacca/app/routes/products.$handle.jsx:54:43)
+    at renderWithHooks (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:9748:24)
+    at renderIndeterminateComponent (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:9806:23)
+    at renderElement (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:9973:15)
+    at renderNodeDestructiveImpl (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:10077:17)
+    at renderNodeDestructive (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:10058:22)
+    at renderContextProvider (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:9950:11)
+    at renderElement (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:10017:17)
+    at renderNodeDestructiveImpl (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:10077:17)
+    at renderNodeDestructive (/Users/hansamin/Desktop/Wacca/node_modules/.vite/deps_ssr/react-dom_server.js:10058:22)
+   GET  500  render  /products/angr-kun-main  741ms
+[2m8:49:17 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct, /app/routes/products.$handle.jsx, /app/components/3d/HeroScene.jsx[22m
+   GET  200  render  /__manifest?p=%2Fproducts%2Fangr-kun-main&version=0.6167737970582603  69ms
+   GET  200  render  /products/angr-kun-main.data  9ms
+   GET  200  render  /  164ms
+[2m8:51:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m8:51:32 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m8:51:36 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  262ms
+   GET  200  render  /  248ms
+   GET  200  render  /  216ms
+   GET  200  render  /  179ms
+[2m8:59:15 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  618ms
+[2m8:59:26 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /  317ms
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/WhatsUr20Input.jsx, /app/styles/app.css?direct[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct, /app/routes/products.$handle.jsx, /app/components/3d/HeroScene.jsx[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/BackgroundCityCanvas.jsx, /app/styles/app.css?direct[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/entry.client.jsx[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/components/cart/AddToCartButton.jsx[22m
+[2m8:59:58 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m9:00:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/ClientOnlyBackgroundCity.jsx, /app/styles/app.css?direct[22m
+[2m9:00:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m9:00:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m9:00:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:00:21 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:00:21 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m9:00:22 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m9:00:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:00:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m9:00:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/cart/CheckoutButton.jsx, /app/styles/app.css?direct[22m
+[2m9:00:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:00:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m9:00:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct[22m
+[2m9:00:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:00:30 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:00:33 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:00:33 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:00:33 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m9:00:33 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/products.$handle.jsx, /app/styles/app.css?direct[22m
+[2m9:00:35 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:00:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m9:00:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:00:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m9:00:41 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:00:41 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:00:43 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:00:44 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m9:00:45 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m9:00:46 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m9:00:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m9:00:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m9:00:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m9:00:50 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m9:00:51 AM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/app/lib/SyncContext.jsx[22m Could not Fast Refresh. Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m9:00:51 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct, ./server.js, /app/routes/_index.jsx, /app/components/ui/CommunityBar.jsx, /app/components/ui/GlobalNavigation.jsx, /app/components/ui/GlobalFooter.jsx, /app/components/3d/HeroScene.jsx[22m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 50056,
+      remoteAddress: '127.0.0.1',
+      remotePort: 59478,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 791,
+      bytesRead: 0
+    }
+  }
+}
+[2m9:00:54 AM[22m [36m[1m[vite][22m[39m server restarted.
+[2m9:01:48 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m9:01:56 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:01:56 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:02:03 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:02:11 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 50240,
+      remoteAddress: '127.0.0.1',
+      remotePort: 50173,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 791,
+      bytesRead: 0
+    }
+  }
+}
+[2m9:02:24 AM[22m [36m[1m[vite][22m[39m server restarted.
+[2m9:02:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:03:02 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:03:02 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m9:03:06 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:03:06 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:03:15 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:03:30 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 50767,
+      remoteAddress: '127.0.0.1',
+      remotePort: 50766,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 268,
+      bytesRead: 0
+    }
+  }
+}
+[2m9:03:46 AM[22m [36m[1m[vite][22m[39m server restarted.
+[2m9:03:52 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:04:22 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:04:23 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:04:24 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:04:26 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:04:28 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+   GET  200  render  /  7724ms
+[2m9:04:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx[22m
+[2m9:04:33 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.1712089859253545  2ms
+[2m9:04:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  4ms
+[2m9:04:39 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:04:39 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct, /app/components/3d/HeroScene.jsx[22m
+[2m9:04:39 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m9:04:39 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m9:04:39 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/entry.client.jsx[22m
+[2m9:04:39 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m9:04:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m9:04:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m9:04:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:04:49 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:04:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m9:04:49 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m9:04:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:04:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m9:04:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:04:55 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:04:55 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:04:55 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m9:04:56 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:04:56 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:04:56 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m9:04:57 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m9:04:57 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:04:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m9:05:04 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m9:05:04 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m9:05:09 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m9:05:10 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m9:05:11 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:05:11 AM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/app/lib/SyncContext.jsx[22m Could not Fast Refresh. Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m9:05:11 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct, ./server.js, /app/routes/_index.jsx, /app/components/ui/GlobalNavigation.jsx, /app/components/ui/CommunityBar.jsx, /app/components/ui/GlobalFooter.jsx, /app/components/3d/HeroScene.jsx[22m
+[2m9:05:11 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m9:05:11 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m9:05:12 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m9:05:12 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m9:05:14 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m9:05:14 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 51849,
+      remoteAddress: '127.0.0.1',
+      remotePort: 51331,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 791,
+      bytesRead: 0
+    }
+  }
+}
+[2m9:05:16 AM[22m [36m[1m[vite][22m[39m server restarted.
+[2m9:06:19 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m9:06:23 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+   GET  200  render  /  7970ms
+   GET  200  render  /  7992ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.22034818031871573  4ms
+[2m9:07:37 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /_root.data  202ms
+   GET  200  render  /products/angr-kun-main  796ms
+[2m9:08:16 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/ClientOnlyBackgroundCity.jsx, /app/styles/app.css?direct[22m
+   GET  200  render  /products/angr-kun-main.data  650ms
+   GET  200  render  /_root.data  62ms
+   GET  200  render  /  36ms
+   GET  200  render  /  515ms
+   GET  200  render  /  112ms
+   GET  200  render  /  394ms
+   GET  200  render  /  179ms
+[2m10:20:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/WhatsUr20Input.jsx, /app/styles/app.css?direct[22m
+[2m10:20:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct, /app/routes/products.$handle.jsx, /app/components/3d/HeroScene.jsx[22m
+[2m10:20:29 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m10:20:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/BackgroundCityCanvas.jsx, /app/styles/app.css?direct[22m
+[2m10:20:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+[2m10:20:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m10:20:31 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m10:20:31 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mapp/entry.client.jsx[22m
+[2m10:20:31 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m10:20:45 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/ClientOnlyBackgroundCity.jsx, /app/styles/app.css?direct[22m
+[2m10:20:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m10:20:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m10:20:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m10:20:48 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m10:20:48 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m10:20:48 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m10:20:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m10:20:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m10:20:49 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/cart/CheckoutButton.jsx, /app/styles/app.css?direct[22m
+[2m10:20:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m10:20:59 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m10:21:00 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct[22m
+[2m10:21:03 AM[22m [36m[1m[vite][22m[39m [32mvite.config.ts changed, restarting server...[39m
+[2m10:21:03 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalFooter.jsx, /app/styles/app.css?direct[22m
+[2m10:21:03 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/3d/HeroScene.jsx, /app/styles/app.css?direct[22m
+[2m10:21:03 AM[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2mtailwind.config.js[22m
+[2m10:21:03 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m10:21:03 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/routes/_index.jsx, /app/styles/app.css?direct[22m
+[2m10:21:06 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m10:21:07 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js, /app/styles/app.css?direct[22m
+[2m10:21:18 AM[22m [36m[1m[vite][22m[39m [32m.env changed, restarting server...[39m
+[2m10:21:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/lib/SyncContext.jsx, /app/styles/app.css?direct[22m
+[2m10:21:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/ClientOnly.jsx, /app/styles/app.css?direct[22m
+[2m10:21:20 AM[22m [36m[1m[vite][22m[39m [33mhmr invalidate [39m[2m/app/lib/SyncContext.jsx[22m Could not Fast Refresh. Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2m10:21:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/root.jsx, /app/styles/app.css?direct, ./server.js, /app/routes/_index.jsx, /app/components/ui/CommunityBar.jsx, /app/components/ui/GlobalFooter.jsx, /app/components/ui/GlobalNavigation.jsx, /app/components/3d/HeroScene.jsx[22m
+[2m10:21:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/GlobalNavigation.jsx, /app/styles/app.css?direct[22m
+[2m10:21:20 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/app/components/ui/CommunityBar.jsx, /app/styles/app.css?direct[22m
+MiniOxygen: Error during evaluation: TypeError: fetch failed
+    at fetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/index.js:112:15)
+    at fetch2 (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/http/fetch.ts:90:19)
+    at Object.dispatchFetch (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/src/index.ts:1535:20) {
+  cause: SocketError: other side closed
+      at Socket.onSocketEnd (/Users/hansamin/Desktop/Wacca/node_modules/miniflare/node_modules/undici/lib/client.js:1118:22)
+      at Socket.emit (node:events:531:35)
+      at Socket.emit (node:domain:489:12)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+    code: 'UND_ERR_SOCKET',
+    socket: {
+      localAddress: '127.0.0.1',
+      localPort: 57408,
+      remoteAddress: '127.0.0.1',
+      remotePort: 51992,
+      remoteFamily: 'IPv4',
+      timeout: undefined,
+      bytesWritten: 791,
+      bytesRead: 0
+    }
+  }
+}
+[2m10:21:25 AM[22m [36m[1m[vite][22m[39m server restarted.
+[2m10:22:27 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m10:22:28 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+[2m10:22:30 AM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m./server.js[22m
+   GET  200  render  /  8011ms
+   GET  200  render  /__manifest?p=%2F&p=%2Fabout&p=%2Faccount%2Flogin&p=%2Fjournal&p=%2Fpolicies&p=%2Fprivacy-policy&p=%2Fproducts&p=%2Fproducts%2Fangr-kun-main&p=%2Fterms-of-service&version=0.9980314239856085  3ms
+   GET  200  render  /  427ms
+   GET  200  render  /  381ms

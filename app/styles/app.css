@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-wacca-red: #E63946;
+  --color-wacca-dark: #0A0A0F;
+  --color-wacca-darker: #050508;
+  --color-wacca-accent: #FF6B6B;
+  --color-wacca-muted: #8B8B9E;
+  --color-wacca-surface: #12121A;
+  --color-wacca-border: #1E1E2E;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-wacca-darker);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-wacca-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-wacca-red);
+  border-radius: 2px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--color-wacca-red);
+  color: #fff;
+}
+
+/* ─── Hero Canvas Container ─── */
+.hero-canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* ─── Content overlay on top of canvas ─── */
+.content-overlay {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ─── Glassmorphism Card ─── */
+.glass-card {
+  background: rgba(18, 18, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+/* ─── Animated gradient border ─── */
+.gradient-border {
+  position: relative;
+  background: var(--color-wacca-surface);
+  border-radius: 16px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  background: linear-gradient(135deg,
+      var(--color-wacca-red),
+      transparent 40%,
+      transparent 60%,
+      var(--color-wacca-accent));
+  z-index: -1;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border:hover::before {
+  opacity: 1;
+}
+
+/* ─── Animated button ─── */
+.btn-wacca {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--color-wacca-red), #c92a36);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-wacca::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-wacca:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(230, 57, 70, 0.4);
+}
+
+.btn-wacca:hover::after {
+  opacity: 1;
+}
+
+.btn-wacca:active {
+  transform: translateY(0);
+}
+
+.btn-wacca:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── Input styles ─── */
+.input-wacca {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(18, 18, 26, 0.8);
+  border: 1px solid var(--color-wacca-border);
+  border-radius: 12px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-wacca::placeholder {
+  color: var(--color-wacca-muted);
+}
+
+.input-wacca:focus {
+  border-color: var(--color-wacca-red);
+  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
+}
+
+.input-wacca.error {
+  border-color: #ff4757;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.15);
+}
+
+/* ─── Fade-in animation ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ─── Pulse glow ─── */
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(230, 57, 70, 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
