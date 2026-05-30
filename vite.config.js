@@ -3,9 +3,7 @@ import {hydrogen} from '@shopify/hydrogen/vite';
 import {oxygen} from '@shopify/mini-oxygen/vite';
 import {vitePlugin as remix} from '@remix-run/dev';
 import tsconfigPaths from 'vite-tsconfig-paths';
-
-// パッケージ自体がプリセット関数としてエクスポートされているため、直接インポートする
-import vercelPreset from '@vercel/remix';
+import { vercelPreset } from '@vercel/remix/vite';
 
 export default defineConfig({
   plugins: [
