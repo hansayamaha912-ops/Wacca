@@ -1,0 +1,242 @@
+{
+  "/Users/hansamin/Developer/Wacca/app/styles/app.css": {
+    "file": "assets/app-Lvt87sSz.css",
+    "src": "/Users/hansamin/Developer/Wacca/app/styles/app.css"
+  },
+  "_ClientOnlyBackgroundCity-DSrQXdcG.js": {
+    "file": "assets/ClientOnlyBackgroundCity-DSrQXdcG.js",
+    "name": "ClientOnlyBackgroundCity",
+    "imports": [
+      "_preload-helper-D7HrI6pR.js",
+      "_jsx-runtime-56DGgGmo.js"
+    ],
+    "dynamicImports": [
+      "app/components/3d/BackgroundCityCanvas.jsx"
+    ]
+  },
+  "_SyncContext-D9tcqC1H.js": {
+    "file": "assets/SyncContext-D9tcqC1H.js",
+    "name": "SyncContext",
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  },
+  "_components-BZlOA5_s.js": {
+    "file": "assets/components-BZlOA5_s.js",
+    "name": "components",
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  },
+  "_jsx-runtime-56DGgGmo.js": {
+    "file": "assets/jsx-runtime-56DGgGmo.js",
+    "name": "jsx-runtime"
+  },
+  "_preload-helper-D7HrI6pR.js": {
+    "file": "assets/preload-helper-D7HrI6pR.js",
+    "name": "preload-helper"
+  },
+  "app/assets/images/products/angr-kun-pro-angle.jpg": {
+    "file": "assets/angr-kun-pro-Bcq92CzU.jpg",
+    "src": "app/assets/images/products/angr-kun-pro.jpg"
+  },
+  "app/assets/images/products/angr-kun-pro.jpg": {
+    "file": "assets/angr-kun-pro-Bcq92CzU.jpg",
+    "src": "app/assets/images/products/angr-kun-pro.jpg"
+  },
+  "app/components/3d/BackgroundCityCanvas.jsx": {
+    "file": "assets/BackgroundCityCanvas-Bi93dOww.js",
+    "name": "BackgroundCityCanvas",
+    "src": "app/components/3d/BackgroundCityCanvas.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  },
+  "app/components/3d/HeroScene.jsx": {
+    "file": "assets/HeroScene-D106yMXl.js",
+    "name": "HeroScene",
+    "src": "app/components/3d/HeroScene.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  },
+  "app/entry.client.jsx": {
+    "file": "assets/entry.client-DQJzoNWF.js",
+    "name": "entry.client",
+    "src": "app/entry.client.jsx",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_components-BZlOA5_s.js"
+    ]
+  },
+  "app/root.jsx?__remix-build-client-route": {
+    "file": "assets/root-9dI6_kyY.js",
+    "name": "root",
+    "src": "app/root.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_components-BZlOA5_s.js"
+    ],
+    "assets": [
+      "assets/app-Lvt87sSz.css"
+    ]
+  },
+  "app/routes/$.jsx?__remix-build-client-route": {
+    "file": "assets/_-Cgu9sJjB.js",
+    "name": "_",
+    "src": "app/routes/$.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_components-BZlOA5_s.js"
+    ]
+  },
+  "app/routes/_index.jsx?__remix-build-client-route": {
+    "file": "assets/_index-D5OmnEmy.js",
+    "name": "_index",
+    "src": "app/routes/_index.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_preload-helper-D7HrI6pR.js",
+      "_jsx-runtime-56DGgGmo.js",
+      "_SyncContext-D9tcqC1H.js",
+      "_components-BZlOA5_s.js"
+    ],
+    "dynamicImports": [
+      "app/components/3d/HeroScene.jsx"
+    ]
+  },
+  "app/routes/about.jsx?__remix-build-client-route": {
+    "file": "assets/about-Bsr3kOTw.js",
+    "name": "about",
+    "src": "app/routes/about.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_ClientOnlyBackgroundCity-DSrQXdcG.js",
+      "_preload-helper-D7HrI6pR.js"
+    ]
+  },
+  "app/routes/account.login.jsx?__remix-build-client-route": {
+    "file": "assets/account.login-CxGVYziV.js",
+    "name": "account.login",
+    "src": "app/routes/account.login.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_components-BZlOA5_s.js"
+    ]
+  },
+  "app/routes/account.register.jsx?__remix-build-client-route": {
+    "file": "assets/account.register-CTxfv8yz.js",
+    "name": "account.register",
+    "src": "app/routes/account.register.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_components-BZlOA5_s.js"
+    ]
+  },
+  "app/routes/api.checkout.js?__remix-build-client-route": {
+    "file": "assets/api.checkout-l0sNRNKZ.js",
+    "name": "api.checkout",
+    "src": "app/routes/api.checkout.js?__remix-build-client-route",
+    "isEntry": true
+  },
+  "app/routes/cart.jsx?__remix-build-client-route": {
+    "file": "assets/cart-l0sNRNKZ.js",
+    "name": "cart",
+    "src": "app/routes/cart.jsx?__remix-build-client-route",
+    "isEntry": true
+  },
+  "app/routes/journal._index.jsx?__remix-build-client-route": {
+    "file": "assets/journal._index-vmU2ImRi.js",
+    "name": "journal._index",
+    "src": "app/routes/journal._index.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  },
+  "app/routes/journal.activate.jsx?__remix-build-client-route": {
+    "file": "assets/journal.activate-NBegwq-N.js",
+    "name": "journal.activate",
+    "src": "app/routes/journal.activate.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_SyncContext-D9tcqC1H.js",
+      "_components-BZlOA5_s.js"
+    ]
+  },
+  "app/routes/order.success.jsx?__remix-build-client-route": {
+    "file": "assets/order.success-CgCgK8nL.js",
+    "name": "order.success",
+    "src": "app/routes/order.success.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_SyncContext-D9tcqC1H.js",
+      "_components-BZlOA5_s.js"
+    ]
+  },
+  "app/routes/policies.jsx?__remix-build-client-route": {
+    "file": "assets/policies-ZJoHWd-u.js",
+    "name": "policies",
+    "src": "app/routes/policies.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  },
+  "app/routes/privacy-policy.jsx?__remix-build-client-route": {
+    "file": "assets/privacy-policy-DobN_jN1.js",
+    "name": "privacy-policy",
+    "src": "app/routes/privacy-policy.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  },
+  "app/routes/products.$handle.jsx?__remix-build-client-route": {
+    "file": "assets/products._handle-Cp15Wcfm.js",
+    "name": "products._handle",
+    "src": "app/routes/products.$handle.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_components-BZlOA5_s.js",
+      "_ClientOnlyBackgroundCity-DSrQXdcG.js",
+      "_preload-helper-D7HrI6pR.js"
+    ],
+    "assets": [
+      "assets/angr-kun-pro-Bcq92CzU.jpg"
+    ]
+  },
+  "app/routes/products._index.jsx?__remix-build-client-route": {
+    "file": "assets/products._index-C7pawzmm.js",
+    "name": "products._index",
+    "src": "app/routes/products._index.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js",
+      "_components-BZlOA5_s.js"
+    ],
+    "assets": [
+      "assets/angr-kun-pro-Bcq92CzU.jpg"
+    ]
+  },
+  "app/routes/terms-of-service.jsx?__remix-build-client-route": {
+    "file": "assets/terms-of-service-CxNWuTuQ.js",
+    "name": "terms-of-service",
+    "src": "app/routes/terms-of-service.jsx?__remix-build-client-route",
+    "isEntry": true,
+    "imports": [
+      "_jsx-runtime-56DGgGmo.js"
+    ]
+  }
+}

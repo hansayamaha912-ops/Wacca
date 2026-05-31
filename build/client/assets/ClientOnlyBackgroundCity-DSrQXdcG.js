@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/BackgroundCityCanvas-Bi93dOww.js","assets/jsx-runtime-56DGgGmo.js"])))=>i.map(i=>d[i]);
+import{_ as s}from"./preload-helper-D7HrI6pR.js";import{r as e,j as u}from"./jsx-runtime-56DGgGmo.js";function l({opacity:o=.2}){const[t,r]=e.useState(null);return e.useEffect(()=>{s(()=>import("./BackgroundCityCanvas-Bi93dOww.js"),__vite__mapDeps([0,1])).then(n=>{r(()=>n.default)})},[]),t?u.jsx(t,{opacity:o}):null}export{l as C};
