@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from '@remix-run/react';
+import { Link } from '@remix-run/react';
 import { json } from '@remix-run/server-runtime';
 
 export const meta = () => [
@@ -77,7 +77,6 @@ const RETURN_POLICY_LINES = [
 ];
 
 export default function Policies() {
-    // 外部からのコンテキスト依存を遮断
     return (
         <main className="min-h-screen bg-[#0a0a0c] text-white pt-32 pb-48 px-6 md:px-12 selection:bg-cyan-500 selection:text-white">
             <div className="max-w-3xl mx-auto">
@@ -97,7 +96,6 @@ export default function Policies() {
 
                 {/* ─── Terminal-style definition list ─── */}
                 <div className="bg-[#030305] border border-cyan-400/20 rounded-md p-6 md:p-10 shadow-[inset_0_0_30px_rgba(0,0,0,0.9)] relative overflow-hidden">
-                    {Scanline overlay}
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,204,0.01)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none" />
 
                     {/* System header */}
