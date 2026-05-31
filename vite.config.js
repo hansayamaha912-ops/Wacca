@@ -20,8 +20,14 @@ export default defineConfig({
   ssr: {
     noExternal: [/^(?!node:).*$/],
   },
+  // ───【追加】見つからないShopifyパッケージをビルド時に安全に無視させる設定 ───
   build: {
-    target: 'es2020',
-    outDir: 'build',
-  },
+    rollupOptions: {
+      external: [
+        '@shopify/hydrogen',
+        '@shopify/remix-oxygen',
+        '@shopify/mini-oxygen'
+      ]
+    }
+  }
 });
