@@ -1,4 +1,4 @@
-import { createRequestHandler } from '@remix-run/dev';
+import { createRequestHandler } from '@remix-run/node';
 import { createAppLoadContext } from '~/lib/context';
 
 /**
