@@ -1,9 +1,14 @@
-import { createRequestHandler } from '@shopify/remix-oxygen';
+import { createRequestHandler } from '@remix-run/dev';
 import { createAppLoadContext } from '~/lib/context';
 
+/**
+ * Vercel-compatible server entry point.
+ * Uses standard Remix request handler instead of Oxygen-specific one.
+ */
 export default {
     async fetch(request, env, executionContext) {
         try {
+            // Create app context with mock implementations
             const appLoadContext = await createAppLoadContext(
                 request,
                 env,
@@ -11,27 +16,24 @@ export default {
             );
 
             /**
-             * Create a Remix request handler and pass
-             * Hydrogen's Storefront client to the loader context.
+             * Create a standard Remix request handler.
+             * Uses @remix-run/dev instead of @shopify/remix-oxygen for Vercel compatibility.
              */
             const handleRequest = createRequestHandler({
                 build: await import('virtual:remix/server-build'),
-                mode: process.env.NODE_ENV,
+                mode: process.env.NODE_ENV || 'production',
                 getLoadContext: () => appLoadContext,
             });
 
             const response = await handleRequest(request);
 
-            if (appLoadContext.cart.setCartId) {
-                // Set cart cookie
-                const cartId = appLoadContext.cart.getCartId();
-                // The cart handler manages cookies automatically
-            }
-
             return response;
         } catch (error) {
-            console.error(error);
-            return new Response('An unexpected error occurred', { status: 500 });
+            console.error('Server error:', error);
+            return new Response('An unexpected error occurred', { 
+                status: 500,
+                headers: { 'Content-Type': 'text/plain' }
+            });
         }
     },
 };
