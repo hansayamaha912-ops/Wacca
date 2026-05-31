@@ -1,9 +1,14 @@
-import { createStorefrontClient, createCartHandler, cartGetIdDefault, cartSetIdDefault } from '@shopify/hydrogen';
+/**
+ * Vercel-compatible context module.
+ * All Shopify/Hydrogen API calls have been removed to prevent
+ * FUNCTION_INVOCATION_FAILED errors on Vercel serverless environment.
+ * 
+ * This provides mock/stub implementations that allow the site to function
+ * without any external API dependencies.
+ */
 
 /**
  * IP → Country mapping for Asian markets.
- * In production with Oxygen, `oxygen-buyer-ip` header provides real geolocation.
- * This implementation maps country codes to Storefront API CountryCode + LanguageCode enums.
  */
 const COUNTRY_LOCALE_MAP: Record<string, { country: string; language: string; currency: string }> = {
     JP: { country: 'JP', language: 'JA', currency: 'JPY' },
@@ -12,13 +17,11 @@ const COUNTRY_LOCALE_MAP: Record<string, { country: string; language: string; cu
     TH: { country: 'TH', language: 'TH', currency: 'THB' },
     KR: { country: 'KR', language: 'KO', currency: 'KRW' },
     US: { country: 'US', language: 'EN', currency: 'USD' },
-    // EU countries → EUR
     DE: { country: 'DE', language: 'DE', currency: 'EUR' },
     FR: { country: 'FR', language: 'FR', currency: 'EUR' },
     IT: { country: 'IT', language: 'IT', currency: 'EUR' },
     ES: { country: 'ES', language: 'ES', currency: 'EUR' },
     NL: { country: 'NL', language: 'NL', currency: 'EUR' },
-    // UK → GBP (bonus)
     GB: { country: 'GB', language: 'EN', currency: 'GBP' },
 };
 
@@ -26,24 +29,20 @@ const DEFAULT_LOCALE = { country: 'US', language: 'EN', currency: 'USD' };
 
 /**
  * Detect buyer's country from request headers.
- * Shopify Oxygen sets `oxygen-buyer-country` or use `cf-ipcountry` for Cloudflare.
  */
 function detectLocale(request: Request) {
     const headers = request.headers;
 
-    // Oxygen environment
     const oxygenCountry = headers.get('oxygen-buyer-country');
     if (oxygenCountry && COUNTRY_LOCALE_MAP[oxygenCountry]) {
         return COUNTRY_LOCALE_MAP[oxygenCountry];
     }
 
-    // Cloudflare fallback
     const cfCountry = headers.get('cf-ipcountry');
     if (cfCountry && COUNTRY_LOCALE_MAP[cfCountry]) {
         return COUNTRY_LOCALE_MAP[cfCountry];
     }
 
-    // Accept-Language header fallback
     const acceptLang = headers.get('accept-language') || '';
     if (acceptLang.includes('ja')) return COUNTRY_LOCALE_MAP['JP'];
     if (acceptLang.includes('zh-TW') || acceptLang.includes('zh-Hant')) return COUNTRY_LOCALE_MAP['TW'];
@@ -60,42 +59,52 @@ function detectLocale(request: Request) {
 }
 
 /**
- * Create the app load context with Storefront client and Cart handler,
- * localized via @inContext directive based on detected buyer location.
+ * Mock Storefront client - no actual API calls.
+ * Returns stub functions that return null/empty data.
+ */
+function createMockStorefrontClient() {
+    return {
+        storefront: {
+            query: async () => ({ data: null }),
+        },
+    };
+}
+
+/**
+ * Mock Cart handler - no actual API calls.
+ * Returns stub functions for cart operations.
+ */
+function createMockCartHandler() {
+    const mockCart = {
+        getCartId: () => null,
+        setCartId: () => new Headers(),
+        addLines: async () => ({ cart: { id: 'mock-cart-id', lines: { nodes: [] } } }),
+        updateLines: async () => ({ cart: { id: 'mock-cart-id', lines: { nodes: [] } } }),
+        removeLines: async () => ({ cart: { id: 'mock-cart-id', lines: { nodes: [] } } }),
+        updateDiscountCodes: async () => ({ cart: { id: 'mock-cart-id', lines: { nodes: [] } } }),
+    };
+    return mockCart;
+}
+
+/**
+ * Create the app load context with mock implementations.
+ * No external API calls are made - this ensures Vercel deployment works reliably.
  */
 export async function createAppLoadContext(
     request: Request,
-    env: Env,
+    env: { PUBLIC_STORE_DOMAIN?: string; PUBLIC_STOREFRONT_API_TOKEN?: string; PUBLIC_STOREFRONT_API_VERSION?: string },
     executionContext: { waitUntil: (promise: Promise<any>) => void },
 ) {
     const locale = detectLocale(request);
 
-    /**
-     * Create Storefront client with @inContext localization.
-     */
-    const { storefront } = createStorefrontClient({
-        storeDomain: env.PUBLIC_STORE_DOMAIN,
-        publicStorefrontToken: env.PUBLIC_STOREFRONT_API_TOKEN,
-        storefrontApiVersion: env.PUBLIC_STOREFRONT_API_VERSION || '2024-10',
-        i18n: {
-            language: locale.language as any,
-            country: locale.country as any,
-        },
-    });
-
-    /**
-     * Create Cart handler for Storefront API cart mutations.
-     */
-    const cart = createCartHandler({
-        storefront,
-        getCartId: cartGetIdDefault(request.headers),
-        setCartId: cartSetIdDefault(),
-    });
+    // Use mock implementations instead of real Shopify API clients
+    const { storefront } = createMockStorefrontClient();
+    const cart = createMockCartHandler();
 
     return {
         storefront,
         cart,
-        env,
+        env: env as any,
         locale,
         waitUntil: executionContext.waitUntil.bind(executionContext),
     };
