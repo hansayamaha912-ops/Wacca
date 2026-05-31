@@ -1,71 +1,25 @@
-import {
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration,
-    useLoaderData,
-} from '@remix-run/react';
+import { Links, Meta, Outlet, Scripts } from '@remix-run/react';
 import { json } from '@remix-run/server-runtime';
-import appStyles from '~/styles/app.css?url';
 
-/**
- * @type {import('@remix-run/server-runtime').LinksFunction}
- */
-export const links = () => {
-    return [
-        { rel: 'stylesheet', href: appStyles },
-        { rel: 'preconnect', href: 'https://cdn.shopify.com' },
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
-    ];
-};
-
-/**
- * @type {import('@remix-run/server-runtime').MetaFunction}
- */
-export const meta = () => {
-    return [
-        { title: 'WACCA - Your City. Your Culture.' },
-        { name: 'description', content: 'From Tokyo to Far, our products carry the energy of every city they touch.' },
-    ];
-};
-
-// どんなインフラ環境（Vercel/Oxygen）でも絶対に型エラーを起こさない安全なフォールバックを徹底注入
-export async function loader({ context }) {
-    const env = context?.env || {};
-    const locale = context?.locale || { currency: 'USD' };
-    
-    return json({
-        publicStoreDomain: env.PUBLIC_STORE_DOMAIN || 'https://wacca2.vercel.app',
-        locale: locale
-    });
+export async function loader() {
+  return json({});
 }
 
-// 内部でShopifyデータやカートデータを要求するナビゲーションを一時的にバイパスし、
-// WACCAの美しいスタイル（app.css）のままポリシーを表示するための緊急レイアウト
 export default function App() {
-    return (
-        <html lang="ja" suppressHydrationWarning={true}>
-            <head>
-                <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-                <meta name="theme-color" content="#030303" />
-                <Meta />
-                <Links />
-            </head>
-            <body suppressHydrationWarning={true} className="bg-wacca-darker text-white">
-                <div className="flex flex-col min-h-screen">
-                    {/* 内部でShopifyのカートやストアコンテキストを呼ぶ共通パーツを安全のために一時隔離。
-                      直接 /policies のサイバーデザインをWACCAのスタイルのまま100%安全に全面描画します。
-                    */}
-                    <Outlet />
-                </div>
-                <ScrollRestoration />
-                <Scripts />
-            </body>
-        </html>
-    );
+  return (
+    <html lang="ja">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body style={{ margin: 0, backgroundColor: '#0a0a0c', color: '#fff', fontFamily: 'monospace' }}>
+        <Outlet />
+        <Scripts />
+      </body>
+    </html>
+  );
 }
 
 import { useRouteError } from '@remix-run/react';

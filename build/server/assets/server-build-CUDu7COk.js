@@ -31463,20 +31463,6 @@ function matchRoutesImpl(routes2, locationArg, basename2, allowPartial) {
   }
   return matches;
 }
-function convertRouteMatchToUiMatch(match, loaderData) {
-  let {
-    route,
-    pathname,
-    params
-  } = match;
-  return {
-    id: route.id,
-    pathname,
-    params,
-    data: loaderData[route.id],
-    handle: route.handle
-  };
-}
 function flattenRoutes(routes2, branches, parentsMeta, parentPath) {
   if (branches === void 0) {
     branches = [];
@@ -32338,7 +32324,7 @@ function useDataRouterContext$2(hookName) {
   !ctx ? process.env.NODE_ENV !== "production" ? invariant$1(false, getDataRouterConsoleError$1(hookName)) : invariant$1(false) : void 0;
   return ctx;
 }
-function useDataRouterState$1(hookName) {
+function useDataRouterState(hookName) {
   let state = reactExports.useContext(DataRouterStateContext);
   !state ? process.env.NODE_ENV !== "production" ? invariant$1(false, getDataRouterConsoleError$1(hookName)) : invariant$1(false) : void 0;
   return state;
@@ -32358,18 +32344,11 @@ function useRouteId() {
   return useCurrentRouteId(DataRouterStateHook$1.UseRouteId);
 }
 function useNavigation() {
-  let state = useDataRouterState$1(DataRouterStateHook$1.UseNavigation);
+  let state = useDataRouterState(DataRouterStateHook$1.UseNavigation);
   return state.navigation;
 }
-function useMatches() {
-  let {
-    matches,
-    loaderData
-  } = useDataRouterState$1(DataRouterStateHook$1.UseMatches);
-  return reactExports.useMemo(() => matches.map((m) => convertRouteMatchToUiMatch(m, loaderData)), [matches, loaderData]);
-}
 function useLoaderData$1() {
-  let state = useDataRouterState$1(DataRouterStateHook$1.UseLoaderData);
+  let state = useDataRouterState(DataRouterStateHook$1.UseLoaderData);
   let routeId = useCurrentRouteId(DataRouterStateHook$1.UseLoaderData);
   if (state.errors && state.errors[routeId] != null) {
     console.error("You cannot `useLoaderData` in an errorElement (routeId: " + routeId + ")");
@@ -32378,14 +32357,14 @@ function useLoaderData$1() {
   return state.loaderData[routeId];
 }
 function useActionData$1() {
-  let state = useDataRouterState$1(DataRouterStateHook$1.UseActionData);
+  let state = useDataRouterState(DataRouterStateHook$1.UseActionData);
   let routeId = useCurrentRouteId(DataRouterStateHook$1.UseLoaderData);
   return state.actionData ? state.actionData[routeId] : void 0;
 }
 function useRouteError() {
   var _state$errors;
   let error = reactExports.useContext(RouteErrorContext);
-  let state = useDataRouterState$1(DataRouterStateHook$1.UseRouteError);
+  let state = useDataRouterState(DataRouterStateHook$1.UseRouteError);
   let routeId = useCurrentRouteId(DataRouterStateHook$1.UseRouteError);
   if (error !== void 0) {
     return error;
@@ -33012,11 +32991,6 @@ function useDataRouterContext$1(hookName) {
   !ctx ? process.env.NODE_ENV !== "production" ? invariant$1(false, getDataRouterConsoleError(hookName)) : invariant$1(false) : void 0;
   return ctx;
 }
-function useDataRouterState(hookName) {
-  let state = reactExports.useContext(DataRouterStateContext);
-  !state ? process.env.NODE_ENV !== "production" ? invariant$1(false, getDataRouterConsoleError(hookName)) : invariant$1(false) : void 0;
-  return state;
-}
 function useLinkClickHandler(to, _temp) {
   let {
     target,
@@ -33150,101 +33124,6 @@ function useFormAction(action2, _temp2) {
     path.pathname = path.pathname === "/" ? basename2 : joinPaths([basename2, path.pathname]);
   }
   return createPath(path);
-}
-const SCROLL_RESTORATION_STORAGE_KEY = "react-router-scroll-positions";
-let savedScrollPositions = {};
-function useScrollRestoration(_temp4) {
-  let {
-    getKey,
-    storageKey
-  } = _temp4 === void 0 ? {} : _temp4;
-  let {
-    router
-  } = useDataRouterContext$1(DataRouterHook.UseScrollRestoration);
-  let {
-    restoreScrollPosition,
-    preventScrollReset
-  } = useDataRouterState(DataRouterStateHook.UseScrollRestoration);
-  let {
-    basename: basename2
-  } = reactExports.useContext(NavigationContext);
-  let location = useLocation();
-  let matches = useMatches();
-  let navigation = useNavigation();
-  reactExports.useEffect(() => {
-    window.history.scrollRestoration = "manual";
-    return () => {
-      window.history.scrollRestoration = "auto";
-    };
-  }, []);
-  usePageHide(reactExports.useCallback(() => {
-    if (navigation.state === "idle") {
-      let key = (getKey ? getKey(location, matches) : null) || location.key;
-      savedScrollPositions[key] = window.scrollY;
-    }
-    try {
-      sessionStorage.setItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY, JSON.stringify(savedScrollPositions));
-    } catch (error) {
-      process.env.NODE_ENV !== "production" ? warning(false, "Failed to save scroll positions in sessionStorage, <ScrollRestoration /> will not work properly (" + error + ").") : void 0;
-    }
-    window.history.scrollRestoration = "auto";
-  }, [storageKey, getKey, navigation.state, location, matches]));
-  if (typeof document !== "undefined") {
-    reactExports.useLayoutEffect(() => {
-      try {
-        let sessionPositions = sessionStorage.getItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY);
-        if (sessionPositions) {
-          savedScrollPositions = JSON.parse(sessionPositions);
-        }
-      } catch (e) {
-      }
-    }, [storageKey]);
-    reactExports.useLayoutEffect(() => {
-      let getKeyWithoutBasename = getKey && basename2 !== "/" ? (location2, matches2) => getKey(
-        // Strip the basename to match useLocation()
-        _extends$1({}, location2, {
-          pathname: stripBasename(location2.pathname, basename2) || location2.pathname
-        }),
-        matches2
-      ) : getKey;
-      let disableScrollRestoration = router == null ? void 0 : router.enableScrollRestoration(savedScrollPositions, () => window.scrollY, getKeyWithoutBasename);
-      return () => disableScrollRestoration && disableScrollRestoration();
-    }, [router, basename2, getKey]);
-    reactExports.useLayoutEffect(() => {
-      if (restoreScrollPosition === false) {
-        return;
-      }
-      if (typeof restoreScrollPosition === "number") {
-        window.scrollTo(0, restoreScrollPosition);
-        return;
-      }
-      if (location.hash) {
-        let el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-        if (el) {
-          el.scrollIntoView();
-          return;
-        }
-      }
-      if (preventScrollReset === true) {
-        return;
-      }
-      window.scrollTo(0, 0);
-    }, [location, restoreScrollPosition, preventScrollReset]);
-  }
-}
-function usePageHide(callback, options) {
-  let {
-    capture
-  } = {};
-  reactExports.useEffect(() => {
-    let opts = capture != null ? {
-      capture
-    } : void 0;
-    window.addEventListener("pagehide", callback, opts);
-    return () => {
-      window.removeEventListener("pagehide", callback, opts);
-    };
-  }, [callback, capture]);
 }
 function useViewTransitionState(to, opts) {
   if (opts === void 0) {
@@ -33387,11 +33266,11 @@ function isHtmlLinkDescriptor(object) {
   return typeof object.rel === "string" && typeof object.href === "string";
 }
 async function getKeyedPrefetchLinks(matches, manifest, routeModules) {
-  let links2 = await Promise.all(matches.map(async (match) => {
+  let links = await Promise.all(matches.map(async (match) => {
     let mod = await loadRouteModule(manifest.routes[match.route.id], routeModules);
     return mod.links ? mod.links() : [];
   }));
-  return dedupeLinkDescriptors(links2.flat(1).filter(isHtmlLinkDescriptor).filter((link) => link.rel === "stylesheet" || link.rel === "preload").map((link) => link.rel === "stylesheet" ? {
+  return dedupeLinkDescriptors(links.flat(1).filter(isHtmlLinkDescriptor).filter((link) => link.rel === "stylesheet" || link.rel === "preload").map((link) => link.rel === "stylesheet" ? {
     ...link,
     rel: "prefetch",
     as: "style"
@@ -34099,9 +33978,9 @@ function useKeyedPrefetchLinks(matches) {
   let [keyedPrefetchLinks, setKeyedPrefetchLinks] = reactExports.useState([]);
   reactExports.useEffect(() => {
     let interrupted = false;
-    void getKeyedPrefetchLinks(matches, manifest, routeModules).then((links2) => {
+    void getKeyedPrefetchLinks(matches, manifest, routeModules).then((links) => {
       if (!interrupted) {
-        setKeyedPrefetchLinks(links2);
+        setKeyedPrefetchLinks(links);
       }
     });
     return () => {
@@ -34633,68 +34512,6 @@ function mergeRefs(...refs) {
       }
     });
   };
-}
-/**
- * @remix-run/react v2.17.4
- *
- * Copyright (c) Remix Software Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.md file in the root directory of this source tree.
- *
- * @license MIT
- */
-let STORAGE_KEY = "positions";
-function ScrollRestoration({
-  getKey,
-  ...props
-}) {
-  let {
-    isSpaMode: isSpaMode2
-  } = useRemixContext();
-  let location = useLocation();
-  let matches = useMatches();
-  useScrollRestoration({
-    getKey,
-    storageKey: STORAGE_KEY
-  });
-  let key = reactExports.useMemo(
-    () => {
-      if (!getKey) return null;
-      let userKey = getKey(location, matches);
-      return userKey !== location.key ? userKey : null;
-    },
-    // Nah, we only need this the first time for the SSR render
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
-  if (isSpaMode2) {
-    return null;
-  }
-  let restoreScroll = ((STORAGE_KEY2, restoreKey) => {
-    if (!window.history.state || !window.history.state.key) {
-      let key2 = Math.random().toString(32).slice(2);
-      window.history.replaceState({
-        key: key2
-      }, "");
-    }
-    try {
-      let positions = JSON.parse(sessionStorage.getItem(STORAGE_KEY2) || "{}");
-      let storedY = positions[restoreKey || window.history.state.key];
-      if (typeof storedY === "number") {
-        window.scrollTo(0, storedY);
-      }
-    } catch (error) {
-      console.error(error);
-      sessionStorage.removeItem(STORAGE_KEY2);
-    }
-  }).toString();
-  return /* @__PURE__ */ reactExports.createElement("script", _extends({}, props, {
-    suppressHydrationWarning: true,
-    dangerouslySetInnerHTML: {
-      __html: `(${restoreScroll})(${escapeHtml(JSON.stringify(STORAGE_KEY))}, ${escapeHtml(JSON.stringify(key))})`
-    }
-  }));
 }
 function StaticRouterProvider({
   context,
@@ -48945,41 +48762,19 @@ const entryServer = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineP
   __proto__: null,
   default: handleRequest
 }, Symbol.toStringTag, { value: "Module" }));
-const appStyles = "/assets/app-Lvt87sSz.css";
-const links = () => {
-  return [
-    { rel: "stylesheet", href: appStyles },
-    { rel: "preconnect", href: "https://cdn.shopify.com" },
-    { rel: "preconnect", href: "https://fonts.googleapis.com" },
-    { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" }
-  ];
-};
-const meta$b = () => {
-  return [
-    { title: "WACCA - Your City. Your Culture." },
-    { name: "description", content: "From Tokyo to Far, our products carry the energy of every city they touch." }
-  ];
-};
-async function loader$3({ context }) {
-  const env = (context == null ? void 0 : context.env) || {};
-  const locale = (context == null ? void 0 : context.locale) || { currency: "USD" };
-  return json2({
-    publicStoreDomain: env.PUBLIC_STORE_DOMAIN || "https://wacca2.vercel.app",
-    locale
-  });
+async function loader$3() {
+  return json2({});
 }
 function App() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("html", { lang: "ja", suppressHydrationWarning: true, children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("html", { lang: "ja", children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs("head", { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("meta", { charSet: "utf-8" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("meta", { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("meta", { name: "theme-color", content: "#030303" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Meta, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Links, {})
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs("body", { suppressHydrationWarning: true, className: "bg-wacca-darker text-white", children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col min-h-screen", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(ScrollRestoration, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs("body", { style: { margin: 0, backgroundColor: "#0a0a0c", color: "#fff", fontFamily: "monospace" }, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Scripts, {})
     ] })
   ] });
@@ -49043,9 +48838,7 @@ const route0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProper
   __proto__: null,
   ErrorBoundary,
   default: App,
-  links,
-  loader: loader$3,
-  meta: meta$b
+  loader: loader$3
 }, Symbol.toStringTag, { value: "Module" }));
 const T$1 = {
   JA: {
@@ -49587,7 +49380,7 @@ function CheckoutButton({
 function ClientOnlyBackgroundCity({ opacity = 0.2 }) {
   const [Component, setComponent] = reactExports.useState(null);
   reactExports.useEffect(() => {
-    import("./BackgroundCityCanvas-DY6K1y0n.js").then((mod) => {
+    import("./BackgroundCityCanvas-uAcYK8x7.js").then((mod) => {
       setComponent(() => mod.default);
     });
   }, []);
@@ -50570,7 +50363,7 @@ const meta$2 = () => {
 function ClientOnlyHeroScene() {
   const [HeroScene, setHeroScene] = reactExports.useState(null);
   reactExports.useEffect(() => {
-    import("./HeroScene-DPllAT4f.js").then((mod) => {
+    import("./HeroScene-FU0uLRbO.js").then((mod) => {
       setHeroScene(() => mod.default);
     });
   }, []);
@@ -50829,7 +50622,7 @@ const route15 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePrope
   default: CatchAllRoute,
   meta
 }, Symbol.toStringTag, { value: "Module" }));
-const serverManifest = { "entry": { "module": "/assets/entry.client-DQJzoNWF.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-9dI6_kyY.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes/account.register": { "id": "routes/account.register", "parentId": "root", "path": "account/register", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/account.register-CTxfv8yz.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes/journal.activate": { "id": "routes/journal.activate", "parentId": "root", "path": "journal/activate", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/journal.activate-NBegwq-N.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/SyncContext-D9tcqC1H.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes/products.$handle": { "id": "routes/products.$handle", "parentId": "root", "path": "products/:handle", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/products._handle-Cp15Wcfm.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-BZlOA5_s.js", "/assets/ClientOnlyBackgroundCity-DSrQXdcG.js", "/assets/preload-helper-D7HrI6pR.js"], "css": [] }, "routes/terms-of-service": { "id": "routes/terms-of-service", "parentId": "root", "path": "terms-of-service", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/terms-of-service-CxNWuTuQ.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/products._index": { "id": "routes/products._index", "parentId": "root", "path": "products", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/products._index-C7pawzmm.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes/journal._index": { "id": "routes/journal._index", "parentId": "root", "path": "journal", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/journal._index-vmU2ImRi.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/privacy-policy": { "id": "routes/privacy-policy", "parentId": "root", "path": "privacy-policy", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/privacy-policy-DobN_jN1.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/account.login": { "id": "routes/account.login", "parentId": "root", "path": "account/login", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/account.login-CxGVYziV.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes/order.success": { "id": "routes/order.success", "parentId": "root", "path": "order/success", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/order.success-CgCgK8nL.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/SyncContext-D9tcqC1H.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes/api.checkout": { "id": "routes/api.checkout", "parentId": "root", "path": "api/checkout", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.checkout-l0sNRNKZ.js", "imports": [], "css": [] }, "routes/policies": { "id": "routes/policies", "parentId": "root", "path": "policies", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/policies-ZJoHWd-u.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-D5OmnEmy.js", "imports": ["/assets/preload-helper-D7HrI6pR.js", "/assets/jsx-runtime-56DGgGmo.js", "/assets/SyncContext-D9tcqC1H.js", "/assets/components-BZlOA5_s.js"], "css": [] }, "routes/about": { "id": "routes/about", "parentId": "root", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/about-Bsr3kOTw.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/ClientOnlyBackgroundCity-DSrQXdcG.js", "/assets/preload-helper-D7HrI6pR.js"], "css": [] }, "routes/cart": { "id": "routes/cart", "parentId": "root", "path": "cart", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/cart-l0sNRNKZ.js", "imports": [], "css": [] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_-Cgu9sJjB.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-BZlOA5_s.js"], "css": [] } }, "url": "/assets/manifest-c8cecb65.js", "version": "c8cecb65" };
+const serverManifest = { "entry": { "module": "/assets/entry.client-D0hiNAm5.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes": { "root": { "id": "root", "parentId": void 0, "path": "", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": true, "module": "/assets/root-HRCCMc8y.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes/account.register": { "id": "routes/account.register", "parentId": "root", "path": "account/register", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/account.register-CDZ4-Sg7.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes/journal.activate": { "id": "routes/journal.activate", "parentId": "root", "path": "journal/activate", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/journal.activate-hLsh-2Ln.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/SyncContext-D9tcqC1H.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes/products.$handle": { "id": "routes/products.$handle", "parentId": "root", "path": "products/:handle", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/products._handle-DMS4PboG.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-DWUXHKDU.js", "/assets/ClientOnlyBackgroundCity-DSrQXdcG.js", "/assets/preload-helper-D7HrI6pR.js"], "css": [] }, "routes/terms-of-service": { "id": "routes/terms-of-service", "parentId": "root", "path": "terms-of-service", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/terms-of-service-CxNWuTuQ.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/products._index": { "id": "routes/products._index", "parentId": "root", "path": "products", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/products._index-BZsusSzI.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes/journal._index": { "id": "routes/journal._index", "parentId": "root", "path": "journal", "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/journal._index-vmU2ImRi.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/privacy-policy": { "id": "routes/privacy-policy", "parentId": "root", "path": "privacy-policy", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/privacy-policy-DobN_jN1.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/account.login": { "id": "routes/account.login", "parentId": "root", "path": "account/login", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/account.login-B7DtEbiI.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes/order.success": { "id": "routes/order.success", "parentId": "root", "path": "order/success", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/order.success-BWMl6AVY.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/SyncContext-D9tcqC1H.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes/api.checkout": { "id": "routes/api.checkout", "parentId": "root", "path": "api/checkout", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/api.checkout-l0sNRNKZ.js", "imports": [], "css": [] }, "routes/policies": { "id": "routes/policies", "parentId": "root", "path": "policies", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/policies-ZJoHWd-u.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js"], "css": [] }, "routes/_index": { "id": "routes/_index", "parentId": "root", "path": void 0, "index": true, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_index-CL_YF-_I.js", "imports": ["/assets/preload-helper-D7HrI6pR.js", "/assets/jsx-runtime-56DGgGmo.js", "/assets/SyncContext-D9tcqC1H.js", "/assets/components-DWUXHKDU.js"], "css": [] }, "routes/about": { "id": "routes/about", "parentId": "root", "path": "about", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/about-Bsr3kOTw.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/ClientOnlyBackgroundCity-DSrQXdcG.js", "/assets/preload-helper-D7HrI6pR.js"], "css": [] }, "routes/cart": { "id": "routes/cart", "parentId": "root", "path": "cart", "index": void 0, "caseSensitive": void 0, "hasAction": true, "hasLoader": true, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/cart-l0sNRNKZ.js", "imports": [], "css": [] }, "routes/$": { "id": "routes/$", "parentId": "root", "path": "*", "index": void 0, "caseSensitive": void 0, "hasAction": false, "hasLoader": false, "hasClientAction": false, "hasClientLoader": false, "hasErrorBoundary": false, "module": "/assets/_-DJ892VcM.js", "imports": ["/assets/jsx-runtime-56DGgGmo.js", "/assets/components-DWUXHKDU.js"], "css": [] } }, "url": "/assets/manifest-30a8bbfc.js", "version": "30a8bbfc" };
 const mode = "production";
 const assetsBuildDirectory = "build/client";
 const basename = "/";

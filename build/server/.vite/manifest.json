@@ -1,18 +1,13 @@
 {
-  "/Users/hansamin/Developer/Wacca/app/styles/app.css": {
-    "file": "assets/app-Lvt87sSz.css",
-    "src": "/Users/hansamin/Developer/Wacca/app/styles/app.css"
-  },
-  "_server-build-DDzO_74Y.js": {
-    "file": "assets/server-build-DDzO_74Y.js",
+  "_server-build-CUDu7COk.js": {
+    "file": "assets/server-build-CUDu7COk.js",
     "name": "server-build",
     "dynamicImports": [
       "app/components/3d/BackgroundCityCanvas.jsx",
       "app/components/3d/HeroScene.jsx"
     ],
     "assets": [
-      "assets/angr-kun-pro-Bcq92CzU.jpg",
-      "assets/app-Lvt87sSz.css"
+      "assets/angr-kun-pro-Bcq92CzU.jpg"
     ]
   },
   "app/assets/images/products/angr-kun-pro-angle.jpg": {
@@ -24,21 +19,21 @@
     "src": "app/assets/images/products/angr-kun-pro.jpg"
   },
   "app/components/3d/BackgroundCityCanvas.jsx": {
-    "file": "assets/BackgroundCityCanvas-DY6K1y0n.js",
+    "file": "assets/BackgroundCityCanvas-uAcYK8x7.js",
     "name": "BackgroundCityCanvas",
     "src": "app/components/3d/BackgroundCityCanvas.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_server-build-DDzO_74Y.js"
+      "_server-build-CUDu7COk.js"
     ]
   },
   "app/components/3d/HeroScene.jsx": {
-    "file": "assets/HeroScene-DPllAT4f.js",
+    "file": "assets/HeroScene-FU0uLRbO.js",
     "name": "HeroScene",
     "src": "app/components/3d/HeroScene.jsx",
     "isDynamicEntry": true,
     "imports": [
-      "_server-build-DDzO_74Y.js"
+      "_server-build-CUDu7COk.js"
     ]
   },
   "virtual:remix/server-build": {
@@ -47,7 +42,7 @@
     "src": "virtual:remix/server-build",
     "isEntry": true,
     "imports": [
-      "_server-build-DDzO_74Y.js"
+      "_server-build-CUDu7COk.js"
     ]
   }
 }

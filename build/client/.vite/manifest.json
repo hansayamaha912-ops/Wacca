@@ -1,8 +1,4 @@
 {
-  "/Users/hansamin/Developer/Wacca/app/styles/app.css": {
-    "file": "assets/app-Lvt87sSz.css",
-    "src": "/Users/hansamin/Developer/Wacca/app/styles/app.css"
-  },
   "_ClientOnlyBackgroundCity-DSrQXdcG.js": {
     "file": "assets/ClientOnlyBackgroundCity-DSrQXdcG.js",
     "name": "ClientOnlyBackgroundCity",
@@ -21,8 +17,8 @@
       "_jsx-runtime-56DGgGmo.js"
     ]
   },
-  "_components-BZlOA5_s.js": {
-    "file": "assets/components-BZlOA5_s.js",
+  "_components-DWUXHKDU.js": {
+    "file": "assets/components-DWUXHKDU.js",
     "name": "components",
     "imports": [
       "_jsx-runtime-56DGgGmo.js"
@@ -63,40 +59,37 @@
     ]
   },
   "app/entry.client.jsx": {
-    "file": "assets/entry.client-DQJzoNWF.js",
+    "file": "assets/entry.client-D0hiNAm5.js",
     "name": "entry.client",
     "src": "app/entry.client.jsx",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ]
   },
   "app/root.jsx?__remix-build-client-route": {
-    "file": "assets/root-9dI6_kyY.js",
+    "file": "assets/root-HRCCMc8y.js",
     "name": "root",
     "src": "app/root.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
-      "_components-BZlOA5_s.js"
-    ],
-    "assets": [
-      "assets/app-Lvt87sSz.css"
+      "_components-DWUXHKDU.js"
     ]
   },
   "app/routes/$.jsx?__remix-build-client-route": {
-    "file": "assets/_-Cgu9sJjB.js",
+    "file": "assets/_-DJ892VcM.js",
     "name": "_",
     "src": "app/routes/$.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ]
   },
   "app/routes/_index.jsx?__remix-build-client-route": {
-    "file": "assets/_index-D5OmnEmy.js",
+    "file": "assets/_index-CL_YF-_I.js",
     "name": "_index",
     "src": "app/routes/_index.jsx?__remix-build-client-route",
     "isEntry": true,
@@ -104,7 +97,7 @@
       "_preload-helper-D7HrI6pR.js",
       "_jsx-runtime-56DGgGmo.js",
       "_SyncContext-D9tcqC1H.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ],
     "dynamicImports": [
       "app/components/3d/HeroScene.jsx"
@@ -122,23 +115,23 @@
     ]
   },
   "app/routes/account.login.jsx?__remix-build-client-route": {
-    "file": "assets/account.login-CxGVYziV.js",
+    "file": "assets/account.login-B7DtEbiI.js",
     "name": "account.login",
     "src": "app/routes/account.login.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ]
   },
   "app/routes/account.register.jsx?__remix-build-client-route": {
-    "file": "assets/account.register-CTxfv8yz.js",
+    "file": "assets/account.register-CDZ4-Sg7.js",
     "name": "account.register",
     "src": "app/routes/account.register.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ]
   },
   "app/routes/api.checkout.js?__remix-build-client-route": {
@@ -163,25 +156,25 @@
     ]
   },
   "app/routes/journal.activate.jsx?__remix-build-client-route": {
-    "file": "assets/journal.activate-NBegwq-N.js",
+    "file": "assets/journal.activate-hLsh-2Ln.js",
     "name": "journal.activate",
     "src": "app/routes/journal.activate.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
       "_SyncContext-D9tcqC1H.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ]
   },
   "app/routes/order.success.jsx?__remix-build-client-route": {
-    "file": "assets/order.success-CgCgK8nL.js",
+    "file": "assets/order.success-BWMl6AVY.js",
     "name": "order.success",
     "src": "app/routes/order.success.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
       "_SyncContext-D9tcqC1H.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ]
   },
   "app/routes/policies.jsx?__remix-build-client-route": {
@@ -203,13 +196,13 @@
     ]
   },
   "app/routes/products.$handle.jsx?__remix-build-client-route": {
-    "file": "assets/products._handle-Cp15Wcfm.js",
+    "file": "assets/products._handle-DMS4PboG.js",
     "name": "products._handle",
     "src": "app/routes/products.$handle.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
-      "_components-BZlOA5_s.js",
+      "_components-DWUXHKDU.js",
       "_ClientOnlyBackgroundCity-DSrQXdcG.js",
       "_preload-helper-D7HrI6pR.js"
     ],
@@ -218,13 +211,13 @@
     ]
   },
   "app/routes/products._index.jsx?__remix-build-client-route": {
-    "file": "assets/products._index-C7pawzmm.js",
+    "file": "assets/products._index-BZsusSzI.js",
     "name": "products._index",
     "src": "app/routes/products._index.jsx?__remix-build-client-route",
     "isEntry": true,
     "imports": [
       "_jsx-runtime-56DGgGmo.js",
-      "_components-BZlOA5_s.js"
+      "_components-DWUXHKDU.js"
     ],
     "assets": [
       "assets/angr-kun-pro-Bcq92CzU.jpg"

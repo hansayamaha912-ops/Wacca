@@ -1,4 +1,4 @@
-import{r as o,j as e}from"./jsx-runtime-56DGgGmo.js";import{u as T}from"./SyncContext-D9tcqC1H.js";import{b,L as I}from"./components-BZlOA5_s.js";const j=()=>[{title:"NODE CONNECTED | WACCA"},{name:"description",content:"Order synchronization successful."}],A="awaiting",g="delivered";function v(c,n){return n===g?`> DELIVERY PROTOCOL ENGAGED.
+import{r as o,j as e}from"./jsx-runtime-56DGgGmo.js";import{u as T}from"./SyncContext-D9tcqC1H.js";import{d as b,c as I}from"./components-DWUXHKDU.js";const j=()=>[{title:"NODE CONNECTED | WACCA"},{name:"description",content:"Order synchronization successful."}],A="awaiting",g="delivered";function v(c,n){return n===g?`> DELIVERY PROTOCOL ENGAGED.
 > ORIGIN TERMINAL: ${c.toUpperCase()}
 > PAYMENT HASH VERIFIED.
 > STRUCTURAL INTEGRITY VALID.
