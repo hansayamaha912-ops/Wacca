@@ -1,6 +1,6 @@
 {
   "version": 2,
   "framework": "remix",
-  "buildCommand": "npm run build",
+  "buildCommand": "npx vite build && npx vite build --ssr",
   "outputDirectory": ".vercel/output"
 }
