@@ -1,16 +1,15 @@
-import { Link } from '@remix-run/react';
+import { Link, useLoaderData } from '@remix-run/react';
+import { json } from '@remix-run/server-runtime';
 
 export const meta = () => [
     { title: '特定商取引法に基づく表記 | WACCA' },
     { name: 'description', content: 'Wacca — 特定商取引法に基づく表記。法人情報、決済手段、返品・交換ポリシー。' },
 ];
 
-/**
- * 特定商取引法に基づく表記
- * Commercial Transactions Act Disclosure (Japan)
- *
- * System-log / terminal-style layout using <dl> markup.
- */
+// サーバーサイドの通信を100%遮断し、絶対にエラーを起こさない空のデータを返す
+export async function loader() {
+    return json({});
+}
 
 const TOKUSHOHO_ENTRIES = [
     {
@@ -66,7 +65,7 @@ const TOKUSHOHO_ENTRIES = [
         id: 'ENT_09',
         label: '返品・交換',
         labelEn: 'RETURN_POLICY',
-        value: null, // multi-line, rendered separately
+        value: null,
     },
 ];
 
@@ -78,30 +77,31 @@ const RETURN_POLICY_LINES = [
 ];
 
 export default function Policies() {
+    // 外部からのコンテキスト依存を遮断
     return (
-        <main className="min-h-screen bg-wacca-darker text-white pt-32 pb-48 px-6 md:px-12 selection:bg-cyan-500 selection:text-white">
+        <main className="min-h-screen bg-[#0a0a0c] text-white pt-32 pb-48 px-6 md:px-12 selection:bg-cyan-500 selection:text-white">
             <div className="max-w-3xl mx-auto">
                 {/* ─── Header ─── */}
-                <header className="mb-16 border-b border-wacca-border pb-8">
-                    <h1 className="font-display text-3xl md:text-4xl tracking-widest uppercase mb-3 text-cyan-400">
+                <header className="mb-16 border-b border-white/10 pb-8">
+                    <h1 className="font-display text-3xl md:text-4xl tracking-widest uppercase mb-3 text-cyan-400" style={{ letterSpacing: '0.2em' }}>
                         特定商取引法に基づく表記
                     </h1>
-                    <p className="font-mono text-xs text-wacca-muted tracking-[0.15em] mb-4">
+                    <p className="font-mono text-xs text-white/40 tracking-[0.15em] mb-4">
                         COMMERCIAL TRANSACTIONS ACT DISCLOSURE
                     </p>
-                    <div className="font-mono text-[10px] text-wacca-muted tracking-widest flex items-center gap-3">
+                    <div className="font-mono text-[10px] text-white/40 tracking-widest flex items-center gap-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                         [ SYS.DOC.ID: TOKUSHOHO-JP-V3 ] — LAST_UPDATED: 2026.04.19
                     </div>
                 </header>
 
                 {/* ─── Terminal-style definition list ─── */}
-                <div className="bg-[#030305] border border-cyan-400/15 rounded-md p-6 md:p-10 shadow-[inset_0_0_30px_rgba(0,0,0,0.8)] relative overflow-hidden">
-                    {/* Scanline overlay */}
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,204,0.02)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none" />
+                <div className="bg-[#030305] border border-cyan-400/20 rounded-md p-6 md:p-10 shadow-[inset_0_0_30px_rgba(0,0,0,0.9)] relative overflow-hidden">
+                    {Scanline overlay}
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,204,0.01)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none" />
 
                     {/* System header */}
-                    <div className="font-mono text-[10px] text-cyan-400/40 tracking-widest mb-8 border-b border-wacca-border/30 pb-4">
+                    <div className="font-mono text-[10px] text-cyan-400/50 tracking-widest mb-8 border-b border-white/10 pb-4">
                         {'>'} SYS.LEGAL_FRAMEWORK.LOAD("tokushoho_jp")<br />
                         {'>'} STATUS: ACTIVE<br />
                         {'>'} RENDERING {TOKUSHOHO_ENTRIES.length} ENTRIES...
@@ -113,14 +113,14 @@ export default function Policies() {
                                 key={entry.id}
                                 className={`group py-5 ${
                                     index < TOKUSHOHO_ENTRIES.length - 1
-                                        ? 'border-b border-wacca-border/20'
+                                        ? 'border-b border-white/5'
                                         : ''
                                 }`}
                             >
                                 {/* Key / Label */}
                                 <dt className="font-mono text-[11px] tracking-[0.2em] text-cyan-400/70 mb-2 flex items-center gap-2">
                                     <span className="text-cyan-400/30">[</span>
-                                    <span className="text-wacca-muted">{entry.id}</span>
+                                    <span className="text-white/40">{entry.id}</span>
                                     <span className="text-cyan-400/30">]</span>
                                     <span className="text-cyan-400/50">—</span>
                                     <span className="uppercase">{entry.labelEn}</span>
@@ -149,7 +149,7 @@ export default function Policies() {
 
                                 {/* Optional sub-note */}
                                 {entry.sub && (
-                                    <dd className="font-mono text-[10px] text-wacca-muted pl-4 mt-1.5">
+                                    <dd className="font-mono text-[10px] text-white/40 pl-4 mt-1.5">
                                         // NOTE: {entry.sub}
                                     </dd>
                                 )}
@@ -158,7 +158,7 @@ export default function Policies() {
                     </dl>
 
                     {/* System footer */}
-                    <div className="font-mono text-[10px] text-cyan-400/30 tracking-widest mt-8 border-t border-wacca-border/30 pt-4">
+                    <div className="font-mono text-[10px] text-cyan-400/30 tracking-widest mt-8 border-t border-white/10 pt-4">
                         {'>'} END_OF_DOCUMENT<br />
                         {'>'} © WACCA — ALL_RIGHTS_RESERVED
                     </div>
@@ -168,19 +168,19 @@ export default function Policies() {
                 <div className="mt-12 flex flex-wrap gap-6 justify-center">
                     <Link
                         to="/terms-of-service"
-                        className="font-mono text-xs text-wacca-muted hover:text-cyan-400 tracking-widest transition-colors duration-300"
+                        className="font-mono text-xs text-white/40 hover:text-cyan-400 tracking-widest transition-colors duration-300"
                     >
                         [ TERMS_OF_SERVICE ]
                     </Link>
                     <Link
                         to="/privacy-policy"
-                        className="font-mono text-xs text-wacca-muted hover:text-cyan-400 tracking-widest transition-colors duration-300"
+                        className="font-mono text-xs text-white/40 hover:text-cyan-400 tracking-widest transition-colors duration-300"
                     >
                         [ PRIVACY_POLICY ]
                     </Link>
                     <Link
                         to="/"
-                        className="font-mono text-xs text-wacca-muted hover:text-white tracking-widest transition-colors duration-300"
+                        className="font-mono text-xs text-white/40 hover:text-white tracking-widest transition-colors duration-300"
                     >
                         [ RETURN_TO_CORE ]
                     </Link>
