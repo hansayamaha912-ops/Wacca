@@ -3,15 +3,14 @@ import {hydrogen} from '@shopify/hydrogen/vite';
 import {oxygen} from '@shopify/mini-oxygen/vite';
 import {vitePlugin as remix} from '@remix-run/dev';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { vercelPreset } from '@vercel/remix/vite';
 
 export default defineConfig({
   plugins: [
     hydrogen(),
     oxygen(),
     remix({
-      presets: [],
-      // VercelでSSR関数が正常にマッピングされるよう、標準のビルド構成を明示
-      buildDirectory: "build",
+      presets: [vercelPreset()],
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
@@ -23,7 +22,7 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   ssr: {
-    // node: モジュールをインポートに巻き込まず、Vercel環境に解決させるガード設定
+    // Exclude Node.js built-in modules from bundling to prevent Vercel build errors
     noExternal: [/^(?!node:).*$/],
     optimizeDeps: {
       include: [],
