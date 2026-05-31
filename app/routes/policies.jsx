@@ -1,11 +1,11 @@
-import { Link } from '@remix-run/react';
+import { useEffect, useState } from 'react';
 
 export const meta = () => [
     { title: '特定商取引法に基づく表記 | WACCA' },
     { name: 'description', content: 'Wacca — 特定商取引法に基づく表記。法人情報、決済手段、返品・交換ポリシー。' },
 ];
 
-// 【超重要】サーバーサイドのloader関数を完全に撤去（削除）します。
+// 🌟【超重要】サーバーサイドのloader関数を完全に撤去（削除）しました。
 // これにより、Vercelのサーバーレス関数（Edgeランタイム）が裏で余計なコードを実行して大爆発するのを物理的に100%防ぎます。
 
 const TOKUSHOHO_ENTRIES = [
@@ -28,65 +28,73 @@ const RETURN_POLICY_LINES = [
 ];
 
 export default function Policies() {
+    // クライアントサイドでのみ安全に描画を完結させるためのハイドレーションガード
+    const [isMounted, setIsMounted] = useState(false);
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    if (!isMounted) {
+        return <div style={{ minHeight: '100vh', backgroundColor: '#0a0a0c' }} />;
+    }
+
     return (
-        <main className="min-h-screen bg-[#0a0a0c] text-white pt-32 pb-48 px-6 md:px-12 selection:bg-cyan-500 selection:text-white">
+        <main className="min-h-screen bg-[#0a0a0c] text-white pt-32 pb-48 px-6 md:px-12 selection:bg-cyan-500 selection:text-white" style={{ backgroundColor: '#0a0a0c', color: '#fff', fontFamily: 'monospace' }}>
             <div className="max-w-3xl mx-auto">
                 {/* ─── Header ─── */}
-                <header className="mb-16 border-b border-white/10 pb-8">
-                    <h1 className="font-display text-3xl md:text-4xl tracking-widest uppercase mb-3 text-cyan-400" style={{ letterSpacing: '0.2em' }}>
+                <header className="mb-16 border-b border-white/10 pb-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '2rem', marginBottom: '4rem' }}>
+                    <h1 className="font-display text-3xl md:text-4xl tracking-widest uppercase mb-3 text-cyan-400" style={{ letterSpacing: '0.2em', color: '#00f0ff', fontSize: '2rem' }}>
                         特定商取引法に基づく表記
                     </h1>
-                    <p className="font-mono text-xs text-white/40 tracking-[0.15em] mb-4">
+                    <p className="font-mono text-xs text-white/40 tracking-[0.15em] mb-4" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem' }}>
                         COMMERCIAL TRANSACTIONS ACT DISCLOSURE
                     </p>
-                    <div className="font-mono text-[10px] text-white/40 tracking-widest flex items-center gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <div className="font-mono text-[10px] text-white/40 tracking-widest flex items-center gap-3" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.6rem' }}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#00f0ff', marginRight: '8px' }} />
                         [ SYS.DOC.ID: TOKUSHOHO-JP-V3 ] — LAST_UPDATED: 2026.05.31
                     </div>
                 </header>
 
                 {/* ─── Terminal-style definition list ─── */}
-                <div className="bg-[#030305] border border-cyan-400/20 rounded-md p-6 md:p-10 shadow-[inset_0_0_30px_rgba(0,0,0,0.9)] relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,204,0.01)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none" />
-
-                    <div className="font-mono text-[10px] text-cyan-400/50 tracking-widest mb-8 border-b border-white/10 pb-4">
+                <div className="bg-[#030305] border border-cyan-400/20 rounded-md p-6 md:p-10 shadow-[inset_0_0_30px_rgba(0,0,0,0.9)] relative overflow-hidden" style={{ backgroundColor: '#030305', border: '1px solid rgba(0,240,255,0.2)', borderRadius: '6px', padding: '2rem', position: 'relative' }}>
+                    <div className="font-mono text-[10px] text-cyan-400/50 tracking-widest mb-8 border-b border-white/10 pb-4" style={{ color: 'rgba(0,240,255,0.5)', fontSize: '0.6rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '1rem', marginBottom: '2rem' }}>
                         {'>'} SYS.LEGAL_FRAMEWORK.LOAD("tokushoho_jp")<br />
                         {'>'} STATUS: ACTIVE<br />
                         {'>'} RENDERING {TOKUSHOHO_ENTRIES.length} ENTRIES...
                     </div>
 
-                    <dl className="space-y-0">
+                    <dl style={{ margin: 0, padding: 0 }}>
                         {TOKUSHOHO_ENTRIES.map((entry, index) => (
-                            <div key={entry.id} className={`group py-5 ${index < TOKUSHOHO_ENTRIES.length - 1 ? 'border-b border-white/5' : ''}`}>
-                                <dt className="font-mono text-[11px] tracking-[0.2em] text-cyan-400/70 mb-2 flex items-center gap-2">
-                                    <span className="text-cyan-400/30">[</span>
-                                    <span className="text-white/40">{entry.id}</span>
-                                    <span className="text-cyan-400/30">]</span>
-                                    <span className="text-cyan-400/50">—</span>
-                                    <span className="uppercase">{entry.labelEn}</span>
+                            <div key={entry.id} style={{ padding: '1.25rem 0', borderBottom: index < TOKUSHOHO_ENTRIES.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none' }}>
+                                <dt style={{ fontSize: '0.7rem', color: 'rgba(0,240,255,0.7)', marginBottom: '0.5rem', letterSpacing: '0.2em' }}>
+                                    <span>[</span>
+                                    <span style={{ color: 'rgba(255,255,255,0.4)' }}>{entry.id}</span>
+                                    <span>]</span>
+                                    <span> — </span>
+                                    <span style={{ textTransform: 'uppercase' }}>{entry.labelEn}</span>
                                 </dt>
-                                <dt className="font-mono text-xs text-white/60 mb-1 pl-4">
+                                <dt style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.25rem', paddingLeft: '1rem' }}>
                                     {entry.label}:
                                 </dt>
 
                                 {entry.id === 'ENT_09' ? (
-                                    <dd className="font-mono text-sm text-white pl-4 mt-2 space-y-1.5">
+                                    <dd style={{ fontSize: '0.875rem', color: '#fff', paddingLeft: '1rem', margin: '0.5rem 0 0 0' }}>
                                         {RETURN_POLICY_LINES.map((line, i) => (
-                                            <div key={i} className="flex items-start gap-2">
-                                                <span className="text-cyan-400/40 select-none shrink-0">{'>'}</span>
-                                                <span className="text-[#d1d1d8]">{line}</span>
+                                            <div key={i} style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.35rem' }}>
+                                                <span style={{ color: 'rgba(0,240,255,0.4)', userSelect: 'none' }}>{'>'}</span>
+                                                <span style={{ color: '#d1d1d8' }}>{line}</span>
                                             </div>
                                         ))}
                                     </dd>
                                 ) : (
-                                    <dd className="font-mono text-sm text-white pl-4 flex items-start gap-2">
-                                        <span className="text-cyan-400/40 select-none shrink-0">{'>'}</span>
+                                    <dd style={{ fontSize: '0.875rem', color: '#fff', paddingLeft: '1rem', margin: 0, display: 'flex', gap: '0.5rem' }}>
+                                        <span style={{ color: 'rgba(0,240,255,0.4)', userSelect: 'none' }}>{'>'}</span>
                                         <span>{entry.value}</span>
                                     </dd>
                                 )}
 
                                 {entry.sub && (
-                                    <dd className="font-mono text-[10px] text-white/40 pl-4 mt-1.5">
+                                    <dd style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.4)', paddingLeft: '1rem', margin: '0.35rem 0 0 0' }}>
                                         // NOTE: {entry.sub}
                                     </dd>
                                 )}
@@ -94,17 +102,10 @@ export default function Policies() {
                         ))}
                     </dl>
 
-                    <div className="font-mono text-[10px] text-cyan-400/30 tracking-widest mt-8 border-t border-white/10 pt-4">
+                    <div style={{ fontMono: 'monospace', fontSize: '0.6rem', color: 'rgba(0,240,255,0.3)', marginTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
                         {'>'} END_OF_DOCUMENT<br />
                         {'>'} © WACCA — ALL_RIGHTS_RESERVED
                     </div>
-                </div>
-
-                {/* ─── Related Links ─── */}
-                <div className="mt-12 flex flex-wrap gap-6 justify-center">
-                    <span className="font-mono text-xs text-white/40 hover:text-cyan-400 tracking-widest transition-colors duration-300 cursor-pointer">[ TERMS_OF_SERVICE ]</span>
-                    <span className="font-mono text-xs text-white/40 hover:text-cyan-400 tracking-widest transition-colors duration-300 cursor-pointer">[ PRIVACY_POLICY ]</span>
-                    <span className="font-mono text-xs text-white/40 hover:text-white tracking-widest transition-colors duration-300 cursor-pointer">[ RETURN_TO_CORE ]</span>
                 </div>
             </div>
         </main>
