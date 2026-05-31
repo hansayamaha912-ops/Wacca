@@ -20,4 +20,8 @@ export default defineConfig({
   ssr: {
     noExternal: [/^(?!node:).*$/],
   },
+  build: {
+    target: 'es2020',
+    outDir: 'build',
+  },
 });

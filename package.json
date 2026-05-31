@@ -5,19 +5,21 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "shopify hydrogen dev --port 3456",
+    "dev": "vite --port 3456",
     "build": "vite build && vite build --ssr",
-    "preview": "npm run build && shopify hydrogen preview",
+    "preview": "npm run build && remix-serve build",
     "typecheck": "tsc"
   },
-  "prettier": "@shopify/prettier-config",
+  "prettier": {
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 100
+  },
   "dependencies": {
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.0",
     "@remix-run/react": "^2.14.0",
     "@remix-run/server-runtime": "^2.14.0",
-    "@shopify/hydrogen": "2024.10.2",
-    "@shopify/remix-oxygen": "^2.0.9",
     "@vercel/remix": "^2.16.7",
     "graphql": "^16.9.0",
     "graphql-tag": "^2.12.6",
