@@ -1,4 +1,4 @@
 {
   "framework": "remix",
-  "buildCommand": "vite build && vite build --ssr"
+  "buildCommand": "npx vite build && npx vite build --ssr"
 }
