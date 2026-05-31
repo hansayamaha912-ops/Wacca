@@ -3,5 +3,7 @@
   "name": "wacca-legal-core",
   "framework": "remix",
   "buildCommand": "npx vite build && npx vite build --ssr",
-  "outputDirectory": ".vercel/output"
+  "outputDirectory": ".vercel/output",
+  "cleanUrls": true,
+  "trailingSlash": false
 }
