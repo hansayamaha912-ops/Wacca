@@ -1,9 +1,9 @@
-import { createRequestHandler } from '@remix-run/node';
 import { createAppLoadContext } from '~/lib/context';
 
 /**
  * Vercel-compatible server entry point.
- * Uses standard Remix request handler instead of Oxygen-specific one.
+ * Minimal implementation that avoids Node.js built-in module dependencies.
+ * The actual request handling is delegated to the Vercel adapter.
  */
 export default {
     async fetch(request, env, executionContext) {
@@ -15,10 +15,10 @@ export default {
                 executionContext,
             );
 
-            /**
-             * Create a standard Remix request handler.
-             * Uses @remix-run/dev instead of @shopify/remix-oxygen for Vercel compatibility.
-             */
+            // The Remix handler is provided by the Vercel adapter
+            // This is a minimal pass-through that lets Vercel handle the routing
+            const { createRequestHandler } = await import('@remix-run/server-runtime');
+            
             const handleRequest = createRequestHandler({
                 build: await import('virtual:remix/server-build'),
                 mode: process.env.NODE_ENV || 'production',

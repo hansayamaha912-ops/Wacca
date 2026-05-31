@@ -22,6 +22,8 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   ssr: {
+    // Exclude Node.js built-in modules from bundling to prevent Vercel build errors
+    noExternal: [/^(?!node:).*$/],
     optimizeDeps: {
       include: [],
     },
