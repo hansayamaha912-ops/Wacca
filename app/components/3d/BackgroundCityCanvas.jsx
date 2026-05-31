@@ -1,73 +1,49 @@
-import React, { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Edges } from '@react-three/drei';
-
-function StructuralCity() {
-    const groupRef = useRef();
-
-    // Generate building data once
-    const buildings = useMemo(() => {
-        return Array.from({ length: 30 }).map(() => ({
-            position: [
-                (Math.random() - 0.5) * 30,
-                Math.random() * 5,
-                (Math.random() - 0.5) * 30
-            ],
-            args: [
-                1 + Math.random() * 2,
-                4 + Math.random() * 12,
-                1 + Math.random() * 2
-            ]
-        }));
-    }, []);
-
-    useFrame((state, delta) => {
-        if (groupRef.current) {
-            groupRef.current.rotation.y -= delta * 0.02; // Slow elegant rotation
-        }
-    });
-
-    return (
-        <group ref={groupRef} position={[0, -10, -15]}>
-            <ambientLight intensity={0.2} />
-            <directionalLight position={[10, 20, 10]} intensity={3.5} castShadow />
-
-            {buildings.map((b, i) => (
-                <mesh key={i} position={b.position}>
-                    <boxGeometry args={b.args} />
-                    <meshStandardMaterial
-                        color={0x222222}
-                        roughness={0.7}
-                        metalness={0.3}
-                    />
-                    <Edges
-                        linewidth={1}
-                        threshold={15}
-                        color="white"
-                        transparent
-                        opacity={0.06}
-                    />
-                </mesh>
-            ))}
-
-            <mesh position={[0, -1, 0]}>
-                <cylinderGeometry args={[20, 20, 1, 64]} />
-                <meshStandardMaterial color={0x050505} />
-            </mesh>
-        </group>
-    );
-}
+/**
+ * Lightweight Background City for Vercel deployment.
+ * All Three.js/R3F rendering has been removed to reduce serverless function size.
+ * This displays a simple CSS-based background pattern instead.
+ */
 
 export default function BackgroundCityCanvas({ opacity = 0.2 }) {
     return (
         <div
             className="fixed inset-0 pointer-events-none z-0"
-            style={{ opacity, mixBlendMode: 'screen' }}
+            style={{
+                opacity,
+                mixBlendMode: 'screen',
+                background: 'radial-gradient(ellipse at center, #111 0%, #030303 100%)',
+                overflow: 'hidden',
+            }}
         >
-            <Canvas camera={{ position: [0, 5, 20], fov: 45 }} style={{ pointerEvents: 'auto' }}>
-                <fog attach="fog" args={['#030303', 10, 40]} />
-                <StructuralCity />
-            </Canvas>
+            {/* Simple grid pattern to suggest a city */}
+            <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: `
+                    linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px)
+                `,
+                backgroundSize: '50px 50px',
+            }} />
+            
+            {/* Subtle animated glow */}
+            <div style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                width: '300px',
+                height: '300px',
+                transform: 'translate(-50%, -50%)',
+                background: 'radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%)',
+                animation: 'bgPulse 4s ease-in-out infinite',
+            }} />
+            
+            <style>{`
+                @keyframes bgPulse {
+                    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+                    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+                }
+            `}</style>
         </div>
     );
 }
